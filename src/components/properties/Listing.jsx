@@ -123,12 +123,12 @@ function Listing({ listing, onDelete, onView, onUpdate }) {
                     width: "100%",
                   }}
                 >
-                  <Link to="/update">
+                  <Link to="/update" state={{listing}}>
                     <Button
                       style={{
                         width: "100%",
                       }}
-                      onClick={() => handleUpdate(listing)}
+                      // onClick={() => handleUpdate(listing)}
                     >
                       Update
                     </Button>
