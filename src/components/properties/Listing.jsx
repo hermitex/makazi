@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Card,
   CardBody,
@@ -10,14 +11,28 @@ import {
   Button,
 } from "reactstrap";
 
-function Listing({ listing }) {
+function Listing({ listing, onDelete, onView, onUpdate }) {
+  function handleDelete(listing) {
+    onDelete(listing.id);
+  }
+
+  function handleView(listing) {
+    onView(listing.id);
+  }
+
+  function handleUpdate(listing) {
+    onUpdate(listing);
+  }
   return (
     <>
-      <Col md={12} >
+      <Col md={12}>
         <Card className="mt-3">
-          <Row >
+          <Row>
             <Col md={4}>
-              <img src={listing.img_url} style={{ width: "100%", height: "100%" }} />
+              <img
+                src={listing.img_url}
+                style={{ width: "100%", height: "100%" }}
+              />
             </Col>
             <Col md={8} className="py-2 px-4">
               <CardTitle className="text-muted">{listing.name}</CardTitle>
@@ -31,11 +46,11 @@ function Listing({ listing }) {
                 }}
               >
                 <li style={{ marginRight: "1rem" }}>
-                  <i class="fa-solid fa-house"></i>
+                  <i className="fa-solid fa-house"></i>
                   {listing.category}
                 </li>
                 <li>
-                  <i class="fa-solid fa-location-dot"></i>
+                  <i className="fa-solid fa-location-dot"></i>
                   {listing.location} {listing.county} county
                 </li>
               </ul>
@@ -49,7 +64,7 @@ function Listing({ listing }) {
                 }}
               >
                 <ListGroupItem
-                  tag="a"
+                  
                   style={{
                     width: "100%",
                   }}
@@ -58,7 +73,7 @@ function Listing({ listing }) {
                   {listing.bedrooms}
                 </ListGroupItem>
                 <ListGroupItem
-                  tag="a"
+                  
                   style={{
                     width: "100%",
                   }}
@@ -67,7 +82,7 @@ function Listing({ listing }) {
                   {listing.bathrooms}
                 </ListGroupItem>
                 <ListGroupItem
-                  tag="a"
+                  
                   style={{
                     width: "100%",
                   }}
@@ -86,35 +101,41 @@ function Listing({ listing }) {
                 }}
               >
                 <ListGroupItem
-                  tag="a"
+                  
                   style={{
                     width: "100%",
                   }}
                 >
-                  <Button
-                    style={{
-                      width: "100%",
-                    }}
-                  >
-                    See More
-                  </Button>
+                  <Link to="details">
+                    <Button
+                      style={{
+                        width: "100%",
+                      }}
+                      onClick={() => handleView(listing)}
+                    >
+                      Details
+                    </Button>
+                  </Link>
                 </ListGroupItem>
                 <ListGroupItem
-                  tag="a"
+                  
                   style={{
                     width: "100%",
                   }}
                 >
-                  <Button
-                    style={{
-                      width: "100%",
-                    }}
-                  >
-                    Edit
-                  </Button>
+                  <Link to="/update">
+                    <Button
+                      style={{
+                        width: "100%",
+                      }}
+                      onClick={() => handleUpdate(listing)}
+                    >
+                      Update
+                    </Button>
+                  </Link>
                 </ListGroupItem>
                 <ListGroupItem
-                  tag="a"
+                  
                   style={{
                     width: "100%",
                   }}
@@ -123,6 +144,7 @@ function Listing({ listing }) {
                     style={{
                       width: "100%",
                     }}
+                    onClick={() => handleDelete(listing)}
                   >
                     Delete
                   </Button>

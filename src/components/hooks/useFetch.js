@@ -8,6 +8,10 @@ function useFetch(url, options = {}) {
       .then((listings) => setListings(listings));
   }, []);
 
+  // function accessor(url, options) {
+    
+  // }
+
   return [listings];
 }
 

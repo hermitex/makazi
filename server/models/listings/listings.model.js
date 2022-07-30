@@ -1,0 +1,15 @@
+const porpertySchema = new Schema({
+  name: String,
+  address: String,
+  summary: String,
+  city: String,
+  county: String,
+  category: String,
+  type: String,
+  description: String,
+  img_url: String,
+  bedrooms: Number,
+  bathrooms: Number,
+  size: Number,
+  price: Number,
+});

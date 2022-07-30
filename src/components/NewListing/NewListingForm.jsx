@@ -14,7 +14,6 @@ import {
 function NewListingForm() {
   const [listingData, setlistingData] = useState({
     name: "",
-    address: "",
     summary: "",
     city: "",
     county: "",
@@ -31,16 +30,11 @@ function NewListingForm() {
   const [urlData, setUrlData] = useState("");
 
   function getImageUrl(file) {
-    console.log(file);
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = () => {
       setUrlData(reader.result);
-      // let img_url = axios.post('/uploadImage', data);
-      // value = img_url   
-      console.log(urlData);  
     };
- 
   }
 
   function handleChange(event) {
@@ -60,20 +54,25 @@ function NewListingForm() {
     setlistingData({ ...listingData, [key]: value });
   }
 
-  function handleSubmit(event) {
+  async function postListing(data) {
+    console.log(data);
+    try {
+      await axios.post("http://localhost:8002/properties", data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  async function handleSubmit(event) {
     event.preventDefault();
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(listingData),
-    };
-    fetch("http://localhost:8002/properties", options)
-      .then((response) => response.json())
-      .then((listing) => setlistingData(listing));
-    window.location = "/listings";
+    try {
+      let result = await axios.post("http://localhost:8001/api/v1/upload", {
+        urlData,
+      });
+      postListing({ ...listingData, img_url: result.data.secure_url });
+    } catch (error) {
+      console.log(error.message);
+    }
   }
 
   return (
@@ -81,13 +80,13 @@ function NewListingForm() {
       <Row>
         <Col md={6}>
           <FormGroup>
-            <Label for="listingName">Listing Name</Label>
+            <Label for="name">Listing Name</Label>
 
             <Input
               onChange={handleChange}
               value={listingData.name}
-              id="listingName"
-              name="listingName"
+              id="name"
+              name="name"
               placeholder="Listing Name"
               type="text"
             />
@@ -95,13 +94,13 @@ function NewListingForm() {
         </Col>
         <Col md={6}>
           <FormGroup>
-            <Label for="listingSize">Listing Size</Label>
+            <Label for="size">Listing Size</Label>
 
             <Input
               onChange={handleChange}
               value={listingData.size}
-              id="listingSize"
-              name="listingSize"
+              id="size"
+              name="size"
               placeholder="Listing Size in Square Feet"
               type="number"
               min={0}
@@ -256,10 +255,13 @@ function NewListingForm() {
             id="img_url"
             name="img_url"
             type="file"
-          />      
-           <FormText>Add multiple images for your listing.</FormText>    
-          <img src={urlData} style={{width: '300px', height: '250px'}} alt="" />
-         
+          />
+          <FormText>Add multiple images for your listing.</FormText>
+          <img
+            src={urlData}
+            style={{ width: "300px", height: "250px" }}
+            alt=""
+          />
         </Col>
       </FormGroup>
       <Button>Add Listing</Button>
