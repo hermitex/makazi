@@ -44,13 +44,13 @@ router.route("/api/v1/listings/new").post((req, res) => {
 
 router.route("/api/v1/listings/:id").get((req, res) => {
   Listing.findById(req.params.id)
-    .then((listing) => router.json(listing))
+    .then((listing) => res.json(listing))
     .catch((error) => res.status(100).json(`Error: ${error}`));
 });
 
 router.route("/api/v1/listings/:id").delete((req, res) => {
   Listing.findOneAndDelete(req.params.id)
-    .then((listing) => router.json(listing))
+    .then((listing) => res.json(listing))
     .catch((error) => res.status(100).json(`Error: ${error}`));
 });
 
