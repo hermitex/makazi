@@ -80,7 +80,7 @@ function NewListingForm() {
       <Row>
         <Col md={6}>
           <FormGroup>
-            <Label for="name">Listing Name</Label>
+            <Label for="name">Name</Label>
 
             <Input
               onChange={handleChange}
@@ -94,7 +94,7 @@ function NewListingForm() {
         </Col>
         <Col md={6}>
           <FormGroup>
-            <Label for="size">Listing Size</Label>
+            <Label for="size">Size</Label>
 
             <Input
               onChange={handleChange}
@@ -109,7 +109,7 @@ function NewListingForm() {
         </Col>
       </Row>
       <FormGroup>
-        <Label for="summary">Listing Summary</Label>
+        <Label for="summary">Summary</Label>
 
         <Input
           onChange={handleChange}
@@ -121,7 +121,7 @@ function NewListingForm() {
         />
       </FormGroup>
       <FormGroup>
-        <Label for="price">Listing Price</Label>
+        <Label for="price">Price</Label>
 
         <Input
           onChange={handleChange}
@@ -134,7 +134,7 @@ function NewListingForm() {
       <Row>
         <Col md={6}>
           <FormGroup>
-            <Label for="city">Listing City</Label>
+            <Label for="city">City</Label>
 
             <Input
               onChange={handleChange}
@@ -162,7 +162,7 @@ function NewListingForm() {
       <Row>
         <Col md={4}>
           <FormGroup>
-            <Label for="bedrooms">Number of Bedrooms</Label>
+            <Label for="bedrooms">Bedrooms</Label>
 
             <Input
               onChange={handleChange}
@@ -176,7 +176,7 @@ function NewListingForm() {
         </Col>
         <Col md={4}>
           <FormGroup>
-            <Label for="bathrooms">Number Of Bathrooms</Label>
+            <Label for="bathrooms">Bathrooms</Label>
 
             <Input
               onChange={handleChange}
@@ -190,7 +190,7 @@ function NewListingForm() {
         </Col>
         <Col md={4}>
           <FormGroup>
-            <Label for="category">Listing for:</Label>
+            <Label for="category">for:</Label>
 
             <Input
               onChange={handleChange}
@@ -208,7 +208,7 @@ function NewListingForm() {
       </Row>
       <FormGroup row>
         <Label for="type" sm={2}>
-          Listing Type
+          Type
         </Label>
         <Col sm={10}>
           <Input
@@ -230,7 +230,7 @@ function NewListingForm() {
 
       <FormGroup row>
         <Label for="description" sm={2}>
-          Listing Description
+          Description
         </Label>
         <Col sm={10}>
           <Input
