@@ -218,7 +218,7 @@ function NewListingForm({
             <Row>
               <Col md={4}>
                 <FormGroup>
-                  <Label for="bedrooms">Number of Bedrooms</Label>
+                  <Label for="bedrooms">Bedrooms</Label>
 
                   <Input
                     onChange={handleChange}
@@ -232,7 +232,7 @@ function NewListingForm({
               </Col>
               <Col md={4}>
                 <FormGroup>
-                  <Label for="bathrooms">Number Of Bathrooms</Label>
+                  <Label for="bathrooms">Bathrooms</Label>
 
                   <Input
                     onChange={handleChange}
