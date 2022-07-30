@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Container, Row } from "reactstrap";
+import { Card, Container, Row } from "reactstrap";
 import useFetch from "../hooks/useFetch";
 import Search from "../search/Search";
 import Listing from "./Listing";
@@ -30,29 +30,32 @@ function Listings() {
 
   return (
     <>
- <Search/>
-    <Row style={{ maxHeight: "100vh", overflowY: "auto" }}>
-      {listingsToShow
-        ? listingsToShow.map((listing) => (
-            <Listing
-              key={listing.id}
-              listing={listing}
-              onDelete={onDelete}
-              onUpdate={onUpdate}
-              onView={onView}
-            />
-          ))
-        : listings &&
-          listings.map((listing) => (
-            <Listing
-              key={listing.id}
-              listing={listing}
-              onDelete={onDelete}
-              onUpdate={onUpdate}
-              onView={onView}
-            />
-          ))}
-    </Row>
+      <Card>
+        <Search />
+      </Card>
+
+      <Row style={{ maxHeight: "100vh", overflowY: "auto" }}>
+        {listingsToShow
+          ? listingsToShow.map((listing) => (
+              <Listing
+                key={listing.id}
+                listing={listing}
+                onDelete={onDelete}
+                onUpdate={onUpdate}
+                onView={onView}
+              />
+            ))
+          : listings &&
+            listings.map((listing) => (
+              <Listing
+                key={listing.id}
+                listing={listing}
+                onDelete={onDelete}
+                onUpdate={onUpdate}
+                onView={onView}
+              />
+            ))}
+      </Row>
     </>
   );
 }

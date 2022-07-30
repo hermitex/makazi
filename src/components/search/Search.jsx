@@ -6,7 +6,8 @@ function Search() {
       className="p-1 "
       style={{
         border: "none",
-        backgroundColor: "transparent",
+        backgroundColor: "#fff",
+        width: "100%",
       }}
     >
       <Row className="d-flex">
@@ -19,7 +20,10 @@ function Search() {
               name="select"
               type="search"
               placeholder="Search"
-              // style={{ width: 100 + "%" }}
+              style={{
+            
+                width: "100%",
+              }}
             ></Input>
           </FormGroup>
         </Col>
@@ -27,11 +31,11 @@ function Search() {
         <Col md={6}>
           <FormGroup>
             <Label for="search">Sort By</Label>
-            <Input
-              id="price"
-              name="select"
-              type="select"
-              // style={{ width: 100 + "%" }}
+            <Input id="price" name="select" type="select"
+             style={{
+            
+              width: "100%",
+            }}
             >
               <option>Price</option>
               <option>Size</option>
@@ -43,12 +47,7 @@ function Search() {
       <Row className="d-flex">
         <Col md={3}>
           <FormGroup>
-            <Input
-              id="price"
-              name="select"
-              type="select"
-              // style={{ width: 100 + "%" }}
-            >
+            <Input id="price" name="select" type="select">
               <option>Any price</option>
               <option>Below 500k</option>
               <option>500k and above</option>
@@ -58,12 +57,7 @@ function Search() {
         </Col>
         <Col md={3}>
           <FormGroup>
-            <Input
-              id="exampleSelect"
-              name="select"
-              type="select"
-              // style={{ width: 100 + "%" }}
-            >
+            <Input id="exampleSelect" name="select" type="select">
               <option>Any type</option>
               <option>Apartment</option>
               <option>Bungalow</option>
@@ -72,12 +66,7 @@ function Search() {
         </Col>
         <Col md={3}>
           <FormGroup>
-            <Input
-              id="exampleSelect"
-              name="select"
-              type="select"
-              // style={{ width: 100 + "%" }}
-            >
+            <Input id="exampleSelect" name="select" type="select">
               <option>Bedrooms</option>
               <option>0</option>
               <option>1</option>
@@ -88,12 +77,7 @@ function Search() {
         </Col>
         <Col md={3}>
           <FormGroup>
-            <Input
-              id="exampleSelect"
-              name="select"
-              type="select"
-              // style={{ width: 100 + "%" }}
-            >
+            <Input id="exampleSelect" name="select" type="select">
               <option>Bathrooms</option>
               <option>0</option>
               <option>1</option>

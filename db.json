@@ -19,21 +19,6 @@
         "Hardwood floors",
         "Covered car port"
       ]
-    },
-    {
-      "name": "Test",
-      "summary": "3 br with garage",
-      "city": "Nairobi",
-      "county": "Nairobi County",
-      "category": "Lease",
-      "type": "Apartment, Condo",
-      "description": "Test description",
-      "img_url": "https://res.cloudinary.com/hng-pre-internship/image/upload/v1659176391/lqwd5erjcl3ocg0grps4.jpg",
-      "bedrooms": "6",
-      "bathrooms": "3",
-      "size": "4567890",
-      "price": "40000000",
-      "id": 102
     }
   ]
 }
