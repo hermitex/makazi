@@ -15,7 +15,7 @@ function App() {
           <Route path="/" element={<ListingContainer />} />
           <Route path="/listings" element={<ListingContainer />} />
           <Route path="/update" element={<Update />} />
-          <Route path="/details/:id" element={<ListingDetails />} />
+          <Route path="/details" element={<ListingDetails />} />
         </Routes>
       </Router>
     </div>

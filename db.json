@@ -21,24 +21,19 @@
       ]
     },
     {
-      "id": 102,
-      "name": "1End of the Road Lane",
-      "address": "1End of the Road Lane",
-      "summary": "3 BR 1 BA House w/ Garage",
+      "name": "Test",
+      "summary": "3 br with garage",
       "city": "Nairobi",
-      "county": "Nairobi",
-      "category": "rent",
-      "description": "A cozy, two bedroom cabin on four acres. Modern plumbing, emergency generator for electrical outages. Propame heat and a wood stove with plenty of trees for fuel. Unpaved gravel driveway is approx 0.5 mile to main road. 15 minutes from downtown shopping....",
-      "img_url": "https://res.cloudinary.com/hng-pre-internship/image/upload/v1659173775/kat5kc0nmbbefxjld0zl.png",
-      "bedrooms": 0,
-      "bathrooms": 0,
-      "size": 3800,
-      "price": "Ksh.3000000",
-      "features": [
-        "2 Bedrrom w/ all appliances",
-        "Hardwood floors",
-        "Covered car port"
-      ]
+      "county": "Nairobi County",
+      "category": "Lease",
+      "type": "Apartment, Condo",
+      "description": "Test description",
+      "img_url": "https://res.cloudinary.com/hng-pre-internship/image/upload/v1659176391/lqwd5erjcl3ocg0grps4.jpg",
+      "bedrooms": "6",
+      "bathrooms": "3",
+      "size": "4567890",
+      "price": "40000000",
+      "id": 102
     }
   ]
 }
