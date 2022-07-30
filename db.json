@@ -7,17 +7,45 @@
       "summary": "3 BR 1 BA House w/ Garage",
       "city": "Nairobi",
       "county": "Nairobi",
-      "category": "rent",
+      "category": "Rent",
       "description": "A cozy, two bedroom cabin on four acres. Modern plumbing, emergency generator for electrical outages. Propame heat and a wood stove with plenty of trees for fuel. Unpaved gravel driveway is approx 0.5 mile to main road. 15 minutes from downtown shopping",
-      "img_url": "https://res.cloudinary.com/hng-pre-internship/image/upload/v1659078772/cozyhomes/assets/pexels-pixabay-280222_xpdhal.jpg",
-      "bedrooms": 0,
-      "bathrooms": 0,
+      "img_url": "https://res.cloudinary.com/hng-pre-internship/image/upload/v1659192965/o8v4zmeif8bxrukmtpce.jpg",
+      "bedrooms": "3",
+      "bathrooms": "3",
       "size": 3800,
       "price": "Ksh.3000000",
       "features": [
         "2 Bedrrom w/ all appliances",
         "Hardwood floors",
         "Covered car port"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "firstName": "John",
+      "lastName": "John",
+      "email": "john@example.com",
+      "password": "12345",
+      "accountType": "user",
+      "wishList": [
+        {
+          "listing_id": 101
+        }
+      ]
+    },
+    {
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "email": "jane@example.com",
+      "password": "12345",
+      "accountType": "Agent",
+      "listings": [
+        {
+          "listing_id": 101,
+          "views": 200,
+          "likes": 200
+        }
       ]
     }
   ]

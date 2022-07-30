@@ -106,7 +106,7 @@ function Listing({ listing, onDelete, onView, onUpdate }) {
                     width: "100%",
                   }}
                 >
-                  <Link to="details" state={{listing}}>
+                  <Link to="/details" state={{listing}}>
                     <Button
                       style={{
                         width: "100%",

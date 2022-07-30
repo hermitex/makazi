@@ -59,8 +59,8 @@ function Search() {
           <FormGroup>
             <Input id="exampleSelect" name="select" type="select">
               <option>Any type</option>
-              <option>Apartment</option>
-              <option>Bungalow</option>
+              <option>For Rent</option>
+              <option>For Sale</option>
             </Input>
           </FormGroup>
         </Col>

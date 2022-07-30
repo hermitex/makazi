@@ -1,10 +1,22 @@
 import { useFormik } from "formik";
-import React from "react";
-import { Form, FormGroup, Input, Label, Row, Col, Button } from "reactstrap";
+import React, { useState } from "react";
+import {
+  Form,
+  FormGroup,
+  Input,
+  Label,
+  Row,
+  Col,
+  Button,
+  Container,
+} from "reactstrap";
 import "./Login.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 // const {Login} = useAuth();
+
+const url = "http://localhost:8002/users";
 
 const initialValues = {
   password: "",
@@ -27,18 +39,30 @@ const validate = ({ password, email }) => {
   return errors;
 };
 
+function isValidUser(email, password, users) {
+ return users.filter((user) => email === user.email && password === user.password) 
+}
+
+async function onSubmit({ email, password }) {
+  let result = await axios.get(url);
+  let users = result.data;
+  if (isValidUser(email, password, users).length) {
+    window.location = "/";
+  } else {
+    alert("Invalid email or password provided");
+  }
+}
+
 function Login() {
+  // const [error, setError] = useState(null)
   const formik = useFormik({
     initialValues,
-    onSubmit: (values) => {
-      console.log(values);
-    },
-
+    onSubmit,
     validate,
   });
   return (
-    <>
-      <Form onSubmit={formik.handleSubmit} style={{ width: "30vw" }}>
+    <Container>
+      <Form onSubmit={formik.handleSubmit}>
         <Row>
           <Col md={12}>
             <FormGroup>
@@ -87,7 +111,7 @@ function Login() {
           <Link to="/signup">Signup</Link>
         </div>
       </Form>
-    </>
+    </Container>
   );
 }
 

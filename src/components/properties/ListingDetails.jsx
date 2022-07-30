@@ -30,9 +30,9 @@ function ListingDetails({}) {
     price,
   } = listing;
   return (
-    <Row className="my-5">
+    <Row className="my-5 container-fluid">
       <Col md={5}>
-        <Card>
+        <Card className="h-100">
           <img src={img_url} alt="listing" />
         </Card>
       </Col>
@@ -41,18 +41,38 @@ function ListingDetails({}) {
           <CardTitle className="h2 text-muted">{name}</CardTitle>
           <CardBody>
             <CardText>{description}</CardText>
-            <CardTitle className="h2 text-muted">Listing at</CardTitle>
-            <CardTitle className="h2">{price}</CardTitle>
-            <CardTitle className="h2 text-muted">Size(sqrft)</CardTitle>
-            <CardTitle className="h2">{size}</CardTitle>
-            <CardTitle className="h2 text-muted">Location</CardTitle>
-            <CardTitle className="h2">
-              {city}, {county} county
-            </CardTitle>
-            <CardTitle className="h2 text-muted">Category</CardTitle>
-            <CardTitle className="h2">{category}</CardTitle>
-            <CardTitle className="h2 text-muted">Type</CardTitle>
-            <CardTitle className="h2">{type || "N/A"}</CardTitle>
+            <div className="container">
+              <Row className="my-5 ">
+                <Col md={4} className="">
+                  <Card className="bg-dark py-5 px-3">
+                    <CardBody>
+                      <CardText className="text-muted h3"> Offering at </CardText>
+                      <CardTitle className="h3 text-light">{price}</CardTitle>
+                    </CardBody>
+                  </Card>
+                </Col>
+                <Col md={4}>
+                  <Card className="bg-dark py-5 px-3">
+                    <CardBody>
+                      
+                      <CardText className="text-muted h3">
+                      Location
+                      </CardText>
+                      <CardTitle className="h3 text-light"> {city}</CardTitle>
+                    </CardBody>
+                  </Card>
+                </Col>
+                <Col md={4}>
+                  <Card className="bg-dark py-5 px-3">
+                    <CardBody>
+                    <CardText className="text-muted h3">Category</CardText>
+                      <CardTitle className="h3 text-light">{category}</CardTitle>
+                     
+                    </CardBody>
+                  </Card>
+                </Col>
+              </Row>
+            </div>
             <ListGroup
               horizontal
               className="d-flex text-center"

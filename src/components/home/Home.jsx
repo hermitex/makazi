@@ -18,7 +18,7 @@ import {
 function Home() {
   return (
     <div style={{ marginTop: "-3rem" }}>
-      <Card inverse style={{border: 'none'}}>
+      <Card inverse style={{ border: "none" }}>
         <video
           style={{ height: "50vh", objectFit: "cover" }}
           autoPlay
@@ -40,7 +40,9 @@ function Home() {
             Buy or rent comfortable and hilarious properites of that matches
             your needs.
           </CardText>
-         <Link to='/listings'><Button>Browse Listings</Button></Link> 
+          <Link to="/listings" style={{ width: "fit-content" }}>
+            <Button>Browse Listings</Button>
+          </Link>
         </CardImgOverlay>
       </Card>
       <div className="container">
@@ -62,7 +64,9 @@ function Home() {
           <Col md={4}>
             <Card className="bg-dark py-5 px-3">
               <CardBody>
-                <CardTitle className="h3 text-light">Choose your type</CardTitle>
+                <CardTitle className="h3 text-light">
+                  Choose your type
+                </CardTitle>
                 <CardText className="text-muted">
                   Find your lovely dream property, look for property model you
                   like and choose the best location that suites your needs

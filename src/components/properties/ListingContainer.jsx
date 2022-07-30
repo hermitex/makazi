@@ -7,7 +7,7 @@ import Listings from "./Listings";
 
 function ListingContainer() {
   return (
-    <div>
+    <div className="container-fluid">
       <Row>
         <Col md={4}>
           <Profile />
