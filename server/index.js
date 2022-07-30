@@ -1,26 +1,59 @@
-require("dotenv").config();
+import { config } from 'dotenv';
 
-const cors = require("cors");
+import { MongoClient } from 'mongodb';
 
-const express = require("express");
+
+
+import cors from "cors";
+
+import express, { json, urlencoded } from "express";
+
+
+
+import uploader  from "./cloudinary/cloudinary.js";
+
+
+import  connect  from "mongoose";
+
+config();
 
 const app = express();
 
 const PORT = process.env.PORT;
 
 
-const cloudinary = require("./cloudinary/cloudinary");
+const uri = process.env.DB_URI;
+
 
 app.use(cors());
 
-app.use(express.json({ limit: "50mb" }));
+app.use(json({ limit: "50mb" }));
 
-app.use(express.urlencoded({ limit: "50mb", extended: true }));
+app.use(urlencoded({ limit: "50mb", extended: true }));
 
 
-app.use(express.json({ limit: "50mb" }));
+app.use(json({ limit: "50mb" }));
 
-app.use(express.urlencoded({ limit: "50mb", extended: true }));
+app.use(urlencoded({ limit: "50mb", extended: true }));
+
+
+
+
+export async function connectToCluster(uri) {
+  let mongoClient;
+
+  try {
+      mongoClient = new MongoClient(uri);
+      console.log('Connecting to MongoDB Atlas cluster...');
+      await mongoClient.connect();
+      console.log('Successfully connected to MongoDB Atlas!');
+
+      return mongoClient;
+  } catch (error) {
+      console.error('Connection to MongoDB Atlas failed!', error);
+      process.exit();
+  }
+}
 
 
 app.get('/api/v1/login', (req, res, next) => {
@@ -29,7 +62,7 @@ app.get('/api/v1/login', (req, res, next) => {
 
 app.post("/api/v1/upload", async (req, res) => {
   let { urlData } = req.body;
-  const uploadedImage = await cloudinary.uploader.upload(
+  const uploadedImage = await uploader.upload(
     urlData,
     {
     //   upload_preset: "unsigned_upload",
@@ -57,6 +90,8 @@ app.post("/", async (req, res) => {
 app.patch("/", (req, res) => {});
 
 app.delete("/", (req, res) => {});
+
+
 
 
 
