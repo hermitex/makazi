@@ -69,20 +69,22 @@ function NewListingForm() {
   }
 
   async function postListing(data) {
+  
     try {
-      await axios.post(`http://localhost:8002/properties`, data);
+      await axios.post(`https://makazi-properties-api.herokuapp.com/api/v1/listings/new`, data);
     } catch (error) {
       console.error(error);
     }
   }
 
   async function handleSubmit(event) {
+    
     event.preventDefault();
     try {
-      let result = await axios.post("http://localhost:8001/api/v1/upload", {
+      let result = await axios.post("https://makazi-properties-api.herokuapp.com/api/v1/upload", {
         urlData
       });
-      postListing({ ...listingData, img_url: result.data.secure_url });
+      postListing(JSON.stringify({ ...listingData, img_url: result.data.secure_url }));
     } catch (error) {
       console.log(error.message);
     }

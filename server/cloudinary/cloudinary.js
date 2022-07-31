@@ -1,4 +1,4 @@
-import { v2 as cloudinary } from "cloudinary";
+const cloudinary = require("cloudinary").v2;
 
 cloudinary.config({
   cloud_name: process.env.CLOUND_NAME,
@@ -7,4 +7,4 @@ cloudinary.config({
   secure: true,
 });
 
-export default cloudinary;
+module.exports = cloudinary;

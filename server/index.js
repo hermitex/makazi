@@ -1,31 +1,53 @@
-import cors from "cors";
+const cors = require("cors");
 
-import express, { json, urlencoded } from "express";
+const express = require("express");
 
-import { config } from "dotenv";
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
-// import {uploader}  from "./cloudinary/cloudinary.js";
+const bodyParser = require('body-parser')
 
-const { uploader } = "./cloudinary/cloudinary";
+require("dotenv").config();
 
-config();
+const { uploader } = require("./cloudinary/cloudinary");
 
 const app = express();
 
 const PORT = process.env.PORT;
 
-app.use(cors());
 
-app.use(json({ limit: "50mb" }));
+app.use(bodyParser.json({ limit: "50mb" }));
 
-app.use(urlencoded({ limit: "50mb", extended: true }));
+app.use(
+  bodyParser.urlencoded({
+    limit: "50mb",
+    extended: true,
+    parameterLimit: 50000,
+  })
+);
 
-app.use(json({ limit: "50mb" }));
+app.use(function (req, res, next) {
+  // Website 
+  res.setHeader("Access-Control-Allow-Origin", "*");
 
-app.use(json({ limit: "50mb" }));
+  // Request methods 
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+  );
 
-app.use(urlencoded({ limit: "50mb", extended: true }));
+  // Request headers 
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type"
+  );
+
+  res.setHeader("Access-Control-Allow-Credentials", true);
+
+  // Pass to next layer of middleware
+  next();
+});
+
+
 
 app.post("/api/v1/upload", async (req, res) => {
   let { urlData } = req.body;
@@ -62,13 +84,11 @@ const connection = mongoose.connection;
 
 connection.once("open", () => console.log("Mongo db connection success!"));
 
-const { listingController } = "./controllers/listings/listings.controller";
-const { userController } = "./controllers/users/users.controller";
+const listingController = require("./controllers/listings/listings.controller");
+const userController = require("./controllers/users/users.controller");
 
-app.use('/users', userController)
-app.use("/listings", listingController);
-
-console.log();
+app.use("/", userController);
+app.use("/", listingController);
 
 app.listen(PORT, () => {
   console.log("listening on port " + PORT);

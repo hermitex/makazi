@@ -1,6 +1,6 @@
-import { Router as router } from "express";
+const router = require('express').Router()
 
-import User from "../../models/users/users.model";
+let User = require("../../models/users/users.model");
 
 router.route("/api/v1/users").get((req, res) => {
   User.find()
@@ -8,7 +8,7 @@ router.route("/api/v1/users").get((req, res) => {
     .catch((error) => res.status(100).json(`Error: ${error}`));
 });
 
-router.route("/api/v1/users/new").post((req, res) => {
+router.route("/api/v1/users/signup").post((req, res) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
   const password = req.body.password;
@@ -27,7 +27,7 @@ router.route("/api/v1/users/new").post((req, res) => {
 
   newUser
     .save()
-    .then(() => res.json("Registration Success!"))
+    .then(() => res.json(newUser))
     .catch((error) => res.status(100).json(`Error: ${error}`));
 });
 
@@ -59,4 +59,4 @@ router.route("/api/v1/users/:id").patch((req, res) => {
   });
 });
 
-export default router;
+module.exports = router;

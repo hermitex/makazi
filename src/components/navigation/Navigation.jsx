@@ -6,7 +6,7 @@ const Navigation = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-5 text-light">
       <div className="container-fluid">
-        <NavLink className="navbar-brand h1" to="/" style={{color: "orange"}}>
+        <NavLink className="navbar-brand h1" to="/" style={{ color: "orange" }}>
           MAKAZI
         </NavLink>
 
@@ -24,7 +24,9 @@ const Navigation = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NavLink to="/"className="nav-link">Home</NavLink>
+              <NavLink to="/" className="nav-link">
+                Home
+              </NavLink>
             </li>
             <li className="nav-item">
               <NavLink to="listings" className="nav-link">
@@ -41,7 +43,13 @@ const Navigation = () => {
                 Rent
               </NavLink>
             </li>
-            <li className="nav-item dropdown">
+            <li className="nav-item">
+              <NavLink to="new" className="nav-link btn text-light" style={{ backgroundColor: "orange"}}>
+                Add Listing
+              </NavLink>
+            </li>
+
+            <li className="nav-item dropdown mr-auto">
               <a
                 className="nav-link dropdown-toggle"
                 href="#"
