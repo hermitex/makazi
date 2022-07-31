@@ -2,10 +2,14 @@ import cors from "cors";
 
 import express, { json, urlencoded } from "express";
 
+import { config } from "dotenv";
+import mongoose from "mongoose";
 
-import { uploader } from "./cloudinary/cloudinary.js";
+// import {uploader}  from "./cloudinary/cloudinary.js";
 
-require("dotenv").config();
+const { uploader } = "./cloudinary/cloudinary";
+
+config();
 
 const app = express();
 
@@ -17,20 +21,18 @@ app.use(json({ limit: "50mb" }));
 
 app.use(urlencoded({ limit: "50mb", extended: true }));
 
+app.use(json({ limit: "50mb" }));
 
 app.use(json({ limit: "50mb" }));
 
 app.use(urlencoded({ limit: "50mb", extended: true }));
-
-
-
 
 app.post("/api/v1/upload", async (req, res) => {
   let { urlData } = req.body;
   const uploadedImage = await uploader.upload(
     urlData,
     {
-    //   upload_preset: "unsigned_upload",
+      //   upload_preset: "unsigned_upload",
       allowed_formats: ["jpg", "png", "gif", "jpeg", "svg", "ico", "webp"],
     },
     function (error, result) {
@@ -48,9 +50,26 @@ app.post("/api/v1/upload", async (req, res) => {
   }
 });
 
+// API
+const uri = process.env.DB_URI;
 
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
+const connection = mongoose.connection;
 
-app.listen(PORT,  () => {
+connection.once("open", () => console.log("Mongo db connection success!"));
+
+const { listingController } = "./controllers/listings/listings.controller";
+const { userController } = "./controllers/users/users.controller";
+
+app.use('/users', userController)
+app.use("/listings", listingController);
+
+console.log();
+
+app.listen(PORT, () => {
   console.log("listening on port " + PORT);
 });

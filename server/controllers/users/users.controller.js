@@ -33,13 +33,13 @@ router.route("/api/v1/users/new").post((req, res) => {
 
 router.route("/api/v1/users/:id").get((req, res) => {
   User.findById(req.params.id)
-    .then((user) => router.json(user))
+    .then((user) => res.json(user))
     .catch((error) => res.status(100).json(`Error: ${error}`));
 });
 
 router.route("/api/v1/users/:id").delete((req, res) => {
   User.findOneAndDelete(req.params.id)
-    .then((user) => router.json(user))
+    .then((user) => res.json(user))
     .catch((error) => res.status(100).json(`Error: ${error}`));
 });
 
