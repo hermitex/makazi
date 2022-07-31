@@ -16,30 +16,6 @@ const PORT = process.env.PORT;
 
 app.use(cors());
 
-
-app.use(function (req, res, next) {
-  // Website 
-  res.setHeader("Access-Control-Allow-Origin", "*");
-
-  // Request methods 
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-  );
-
-  // Request headers 
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "X-Requested-With,content-type"
-  );
-
-  // res.setHeader("Access-Control-Allow-Credentials", true);
-
-  // Pass to next layer of middleware
-  next();
-});
-
-app.use(bodyParser.json());
 app.use(bodyParser.json({ limit: "50mb" }));
 
 app.use(

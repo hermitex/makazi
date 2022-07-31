@@ -79,15 +79,14 @@ function NewListingForm() {
     }
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    postListing(JSON.stringify(listingData));
+  async function handleSubmit(event) {
+    event.preventDefault();  
     try {
-      let result =  axios.post("https://makazi-properties-api.herokuapp.com/api/v1/upload", {
+      let result =  await axios.post("https://makazi-properties-api.herokuapp.com/api/v1/upload", {
         urlData
       });
 
-      postListing(JSON.stringify({ ...listingData, img_url: result.data.secure_url }));
+      postListing({ ...listingData, img_url: result.data.secure_url });
     } catch (error) {
       console.log(error.message);
     }
