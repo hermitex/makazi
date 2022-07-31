@@ -3,7 +3,7 @@ import cors from "cors";
 import express, { json, urlencoded } from "express";
 
 
-import { uploader } from "./cloudinary/cloudinary";
+import { uploader } from "./cloudinary/cloudinary.js";
 
 require("dotenv").config();
 
