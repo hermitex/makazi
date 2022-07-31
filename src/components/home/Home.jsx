@@ -50,7 +50,7 @@ function Home() {
           <Col md={12} className="text-center my-3 text-dark">
             <h3>What we Offer</h3>
           </Col>
-          <Col md={4} className="">
+          <Col md={4} className="mb-2">
             <Card className="bg-dark py-5 px-3">
               <CardBody>
                 <CardTitle className="h3 text-warning">Virtual Survey</CardTitle>
@@ -61,7 +61,7 @@ function Home() {
               </CardBody>
             </Card>
           </Col>
-          <Col md={4}>
+          <Col md={4} className="mb-2">
             <Card className="bg-dark py-5 px-3">
               <CardBody>
                 <CardTitle className="h3 text-warning">
@@ -74,7 +74,7 @@ function Home() {
               </CardBody>
             </Card>
           </Col>
-          <Col md={4}>
+          <Col md={4} className="mb-2">
             <Card className="bg-dark py-5 px-3">
               <CardBody>
                 <CardTitle className="h3 text-warning">Easy Payment</CardTitle>
