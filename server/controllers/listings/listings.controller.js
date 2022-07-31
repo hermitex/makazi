@@ -8,9 +8,6 @@ router.route("/api/v1/listings").get((req, res) => {
 });
 
 router.route("/api/v1/listings/new").post((req, res) => {
-  console.log(typeof(req.body));
-  console.log(req.body);
-
   const name = req.body.name;
   const summary = req.body.summary;
   const city = req.body.city;

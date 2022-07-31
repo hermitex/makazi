@@ -77,17 +77,19 @@ function NewListingForm() {
     }
   }
 
-  async function handleSubmit(event) {
+  function handleSubmit(event) {
     
     event.preventDefault();
-    try {
-      let result = await axios.post("https://makazi-properties-api.herokuapp.com/api/v1/upload", {
-        urlData
-      });
-      postListing(JSON.stringify({ ...listingData, img_url: result.data.secure_url }));
-    } catch (error) {
-      console.log(error.message);
-    }
+    postListing(JSON.stringify(listingData));
+    // try {
+    //   let result = await axios.post("https://makazi-properties-api.herokuapp.com/api/v1/upload", {
+    //     urlData
+    //   });
+
+    //   postListing(JSON.stringify({ ...listingData, img_url: result.data.secure_url }));
+    // } catch (error) {
+    //   console.log(error.message);
+    // }
   }
 
   return (
@@ -108,7 +110,6 @@ function NewListingForm() {
               <Col md={6}>
                 <FormGroup>
                   <Label for="name">Name</Label>
-
                   <Input
                     onChange={handleChange}
                     value={listingData.name}
