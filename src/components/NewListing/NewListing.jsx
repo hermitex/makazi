@@ -68,17 +68,18 @@ function NewListingForm() {
     setlistingData({ ...listingData, [key]: value });
   }
 
-  async function postListing(data) {
-  
+  function postListing(data) {
     try {
-      await axios.post(`https://makazi-properties-api.herokuapp.com/api/v1/listings/new`, data);
+      axios.post(
+        `https://makazi-properties-api.herokuapp.com/api/v1/listings/new`,
+        data
+      );
     } catch (error) {
       console.error(error);
     }
   }
 
   function handleSubmit(event) {
-    
     event.preventDefault();
     postListing(JSON.stringify(listingData));
     // try {
@@ -96,11 +97,7 @@ function NewListingForm() {
     <Row className="m-5">
       <Col md={4}>
         <Card style={{ height: "100%" }}>
-          <img
-            src={urlData }
-            style={{ width: "100%" }}
-            alt=""
-          />
+          <img src={urlData} style={{ width: "100%" }} alt="" />
         </Card>
       </Col>
       <Col md={8}>

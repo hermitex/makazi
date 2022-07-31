@@ -14,16 +14,8 @@ const app = express();
 
 const PORT = process.env.PORT;
 
+// app.use(cors());
 
-app.use(bodyParser.json({ limit: "50mb" }));
-
-app.use(
-  bodyParser.urlencoded({
-    limit: "50mb",
-    extended: true,
-    parameterLimit: 50000,
-  })
-);
 
 app.use(function (req, res, next) {
   // Website 
@@ -41,13 +33,22 @@ app.use(function (req, res, next) {
     "X-Requested-With,content-type"
   );
 
-  res.setHeader("Access-Control-Allow-Credentials", true);
+  // res.setHeader("Access-Control-Allow-Credentials", true);
 
   // Pass to next layer of middleware
   next();
 });
 
+app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: "50mb" }));
 
+app.use(
+  bodyParser.urlencoded({
+    limit: "50mb",
+    extended: true,
+    parameterLimit: 50000,
+  })
+);
 
 app.post("/api/v1/upload", async (req, res) => {
   let { urlData } = req.body;
