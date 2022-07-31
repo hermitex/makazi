@@ -22,7 +22,11 @@ function Listing({ listing, onDelete }) {
           <Row>
             <Col md={4}>
               <img
-                src={listing.img_url}
+                src={
+                  listing.url.lenght
+                    ? listing.img_url
+                    : `https://via.placeholder.com/500x350.png?text=The+Agent+Has+Not+Posted+Photos`
+                }
                 style={{ width: "100%", height: "100%" }}
                 alt={listing.name}
               />
