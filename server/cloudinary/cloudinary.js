@@ -7,4 +7,4 @@ cloudinary.config({
   secure: true,
 });
 
-export default uploader;
+export default cloudinary;
