@@ -102,7 +102,7 @@ function NewListingForm({
 
   async function postListing(data) {
     try {
-      await axios.patch(`http://localhost:8002/properties/${id}`, data);
+      await axios.patch(`https://makazi-properties-api.herokuapp.com/api/v1/listings/${id}`, data);
     } catch (error) {
       console.error(error);
     }
@@ -111,7 +111,7 @@ function NewListingForm({
   async function handleSubmit(event) {
     event.preventDefault();
     try {
-      let result = await axios.post("http://localhost:8001/api/v1/upload", {
+      let result = await axios.post("https://makazi-properties-api.herokuapp.com/upload", {
         urlData: urlData ? urlData : img_url,
       });
       postListing({ ...listingData, img_url: result.data.secure_url });
