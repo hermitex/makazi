@@ -2,12 +2,12 @@ import cors from "cors";
 
 import express, { json, urlencoded } from "express";
 
+import { config } from "dotenv";
+import mongoose from "mongoose";
+
 // import {uploader}  from "./cloudinary/cloudinary.js";
 
 const { uploader } = "./cloudinary/cloudinary";
-
-import { config } from "dotenv";
-import mongoose from "mongoose";
 
 config();
 
