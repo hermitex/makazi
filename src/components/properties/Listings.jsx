@@ -6,11 +6,11 @@ import Search from "../search/Search";
 import Listing from "./Listing";
 
 function Listings() {
-  const [listings] = useFetch("https://makazi-properties-api.herokuapp.com/api/v1/listings");
+  const [listings] = useFetch("https://makazi-api.herokuapp.com/api/v1/listings");
   const [listingsToShow, setListingsToShow] = useState(null);
   async function onDelete(id) {
     try {
-      await axios.delete(`https://makazi-properties-api.herokuapp.com/api/v1/listings/${id}`, {
+      await axios.delete(`https://makazi-api.herokuapp.com/api/v1/listings/${id}`, {
         headers: { "Content-Type": "application/json" },
       });
       let newListings = listings.filter((listing) => listing.id !== id);
