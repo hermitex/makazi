@@ -7,13 +7,18 @@ import Loader from "../spinner/Loader";
 import Listing from "./Listing";
 
 function Listings() {
-  const [listings] = useFetch("https://makazi-api.herokuapp.com/api/v1/listings");
+  const [listings] = useFetch(
+    "https://makazi-api.herokuapp.com/api/v1/listings"
+  );
   const [listingsToShow, setListingsToShow] = useState(null);
   async function onDelete(id) {
     try {
-      await axios.delete(`https://makazi-api.herokuapp.com/api/v1/listings/${id}`, {
-        headers: { "Content-Type": "application/json" },
-      });
+      await axios.delete(
+        `https://makazi-api.herokuapp.com/api/v1/listings/${id}`,
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
       let newListings = listings.filter((listing) => listing.id !== id);
       setListingsToShow(newListings);
     } catch (error) {
@@ -31,30 +36,34 @@ function Listings() {
 
   return (
     <>
-      <Card >
+      <Card>
         <Search />
       </Card>
-      <Row >
-        {listingsToShow
-          ? listingsToShow.map((listing) => (
-              <Listing
-                key={listing.id}
-                listing={listing}
-                onDelete={onDelete}
-                onUpdate={onUpdate}
-                onView={onView}
-              />
-            ))
-          : listings? <Loader /> :
-            listings.map((listing) => (
-              <Listing
-                key={listing.id}
-                listing={listing}
-                onDelete={onDelete}
-                onUpdate={onUpdate}
-                onView={onView}
-              />
-            ))}
+      <Row>
+        {listingsToShow ? (
+          listingsToShow.map((listing) => (
+            <Listing
+              key={listing.id}
+              listing={listing}
+              onDelete={onDelete}
+              onUpdate={onUpdate}
+              onView={onView}
+            />
+          ))
+        ) : listings === null ? (
+          <Loader />
+        ) : (
+          listings &&
+          listings.map((listing) => (
+            <Listing
+              key={listing.id}
+              listing={listing}
+              onDelete={onDelete}
+              onUpdate={onUpdate}
+              onView={onView}
+            />
+          ))
+        )}
       </Row>
     </>
   );
