@@ -36,7 +36,7 @@ function Listing({ listing, onDelete, onView, onUpdate }) {
             </Col>
             <Col md={8} className="py-2 px-4">
               <CardTitle className="text-muted">{listing.name}</CardTitle>
-              <CardTitle className="h2">Ks. {listing.price}</CardTitle>
+              <CardTitle className="h2">Ksh.{listing.price}</CardTitle>
               <CardTitle className="h2 text-muted">{listing.summary}</CardTitle>
 
               <ul
