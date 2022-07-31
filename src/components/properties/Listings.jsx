@@ -30,7 +30,7 @@ function Listings() {
 
   return (
     <>
-      <Card>
+      <Card className="d-sm-none">
         <Search />
       </Card>
 {/* style={{ maxHeight: "100vh", overflowY: "auto" }} */}
