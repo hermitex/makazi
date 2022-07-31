@@ -1,70 +1,144 @@
-# Getting Started with Create React App
+# Makazi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Makazi is a Real Estate web application that allows Agents to manage properties. It also allows Users to access, and browse through properties as they make decisions about which to buy.
 
-## Available Scripts
+### By Tiberius Mairura, 24/06/2022
 
-In the project directory, you can run:
+## Landing Page
 
-### `npm start`
+![image](./src/assets/images/listing-home.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Forecasts Section
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![image](./src/assets/images/listing-forecasts.png)
 
-### `npm test`
+## Live Demo on
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Youtube Video](https://youtu.be/pjMLm8xdYA0)
 
-### `npm run build`
+## Table of Content
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Makazi](#makazi)
+    - [By Tiberius Mairura, 24/06/2022](#by-tiberius-mairura-24062022)
+  - [Landing Page](#landing-page)
+  - [Forecasts Section](#forecasts-section)
+  - [Live Demo on](#live-demo-on)
+  - [Table of Content](#table-of-content)
+  - [Description](#description)
+  - [Features](#features)
+    - [Requirements](#requirements)
+    - [Installation Process](#installation-process)
+    - [Live Link](#live-link)
+    - [Technology  Used](#technology--used)
+  - [Known Bugs](#known-bugs)
+  - [Licence](#licence)
+  - [Author's Details](#authors-details)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Description
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+****
+Makazi allows real estate agents to manage their listings. The agents can post, list, edit, and delete properties. Users can also access property information, browse through properties and make purchase of properties of their choice. Users can also make personal accounts to personalize their experiences.
+****
 
-### `npm run eject`
+[Go Back to the top](#Makazi)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Features
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+As an Agent you should be able to:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. `Register`  an agent account
+2. `Upload` new listing
+3. `Update` listings
+4. `Delete` listings
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+As User you should be able to:
 
-## Learn More
+1. `Register`  a user account
+2. `View`  listings
+3. `View` agent profiles and contact information
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Go Back to the top](#Makazi)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Requirements
 
-### Code Splitting
+- Access to  a computer, mobile phone or any other garget
+- Internet access
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Installation Process
 
-### Analyzing the Bundle Size
+****
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Clone to this repo by running the command : `git clone https://github.com/hermitex/makazi.git`
+- Unzip the downloaded files in a folder of choice.
+- Open the folder with your favorite CLI tool.
+- Run `npm install` on your terminal from inside the root folder of the project
+- Run `node server.js` on your terminal from inside the root folder of the project to run the server
+- The server should run on `http://localhost:3000` by default
+- If the port is busy, kindly feel free to change the port inside the server.js file
+- Once the server is up and running, visit the link  `http://localhost:3000` to access the application
+- Note that if you changed the port number, you will have a different port number on the link
+- At this point, you will see the home page
+- Great!!! Try to create some weather forecasts...
+- You could also allow GPS when prompted to get the forecasts for your current location
 
-### Making a Progressive Web App
+ ****
+[Go Back to the top](#Makazi)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Live Link
 
-### Advanced Configuration
+- Click this [link](https://cyweather.herokuapp.com/) to view the live application
+  
+****
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Technology  Used
 
-### Deployment
+- HTML -to develop the structure off the page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- CSS - to style the User Interface
+- NodeJS - To build a RESTful API
+- ReactJS - Building component based UI
+- [Weather Forecast API](https://open-meteo.com/en) - to facilitate fetching of weather forecast data
 
-### `npm run build` fails to minify
+[Go Back to the top](#Makazi)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+****
+
+## Known Bugs
+
+- Sometimes the time for the weather forecast could be wrong
+
+****
+
+## Licence
+
+MIT License
+Copyright (c) [2022] [Tiberius Mairura]
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+[Go Back to the top](#Makazi)
+****
+
+## Author's Details
+
+Feel free to reach out via:
+
+- StackOverflow Profile - [Tiberius Mairura](https://stackoverflow.com/users/11869442/tiberius)
+- Linked - [Tiberius Mairura](https://www.linkedin.com/in/tiberius-mairura/)
+- Dev.to - [Tiberius Mairura](https://dev.to/hermitex)
+
+[Go Back to the top](#Makazi)
+****
