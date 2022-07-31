@@ -33,8 +33,8 @@ function Listings() {
       <Card>
         <Search />
       </Card>
-
-      <Row style={{ maxHeight: "100vh", overflowY: "auto" }}>
+{/* style={{ maxHeight: "100vh", overflowY: "auto" }} */}
+      <Row >
         {listingsToShow
           ? listingsToShow.map((listing) => (
               <Listing
