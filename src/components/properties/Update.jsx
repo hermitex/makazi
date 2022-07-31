@@ -102,7 +102,7 @@ function NewListingForm({
 
   async function postListing(data) {
     try {
-      await axios.patch(`https://makazi-properties-api.herokuapp.com/api/v1/listings/${id}`, data);
+      await axios.patch(`https://makazi-api.herokuapp.com/api/v1/listings/${id}`, data);
     } catch (error) {
       console.error(error);
     }
@@ -321,7 +321,7 @@ function NewListingForm({
                 <FormText>Add multiple images for your listing.</FormText>
               </Col>
             </FormGroup>
-            <Button>Add Listing</Button>
+            <Button>Save Changes</Button>
           </Form>
         </Col>
       </Row>
