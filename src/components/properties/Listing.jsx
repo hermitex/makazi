@@ -26,7 +26,7 @@ function Listing({ listing, onDelete, onView, onUpdate }) {
   return (
     <>
       <Col md={12}>
-        <Card className="mt-3">
+        <Card className="mt-3 mb-2">
           <Row>
             <Col md={4}>
               <img
