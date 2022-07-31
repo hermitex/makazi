@@ -10,6 +10,7 @@ import {
   ListGroupItem,
   Row,
 } from "reactstrap";
+import Profile from "../profile/Profile";
 
 function ListingDetails({}) {
   const location = useLocation();
@@ -31,42 +32,52 @@ function ListingDetails({}) {
   } = listing;
   return (
     <Row className="my-5 container-fluid">
-      <Col md={5}>
+      <Col md={3}>
+        {/* <Card className="h-100">
+          <img src={img_url} alt="listing" />
+        </Card> */}
+        <Profile/>
+      </Col>
+      <Col md={9}>
+      <Card className="p-5">
+        <Row>
+        <Col md={3}>
         <Card className="h-100">
           <img src={img_url} alt="listing" />
         </Card>
+      
       </Col>
-      <Col md={7}>
-        <Card className="p-5">
+      <Col md={9}>
+    
           <CardTitle className="h2 text-muted">{name}</CardTitle>
           <CardBody>
             <CardText>{description}</CardText>
-            <div className="container">
+            <div className="container-fluid">
               <Row className="my-5 ">
                 <Col md={4} className="">
-                  <Card className="bg-dark py-5 px-3">
+                  <Card className="bg-dark py-3 px-1">
                     <CardBody>
-                      <CardText className="text-muted h3"> Offering at </CardText>
-                      <CardTitle className="h3 text-light">{price}</CardTitle>
+                      <CardText className="text-muted h5"> Offering at </CardText>
+                      <CardTitle className="h4 text-light">{price}</CardTitle>
                     </CardBody>
                   </Card>
                 </Col>
                 <Col md={4}>
-                  <Card className="bg-dark py-5 px-3">
+                  <Card className="bg-dark py-3 px-1">
                     <CardBody>
                       
-                      <CardText className="text-muted h3">
+                      <CardText className="text-muted h5">
                       Location
                       </CardText>
-                      <CardTitle className="h3 text-light"> {city}</CardTitle>
+                      <CardTitle className="h4 text-light"> {city}</CardTitle>
                     </CardBody>
                   </Card>
                 </Col>
                 <Col md={4}>
-                  <Card className="bg-dark py-5 px-3">
+                  <Card className="bg-dark py-3 px-1">
                     <CardBody>
-                    <CardText className="text-muted h3">Category</CardText>
-                      <CardTitle className="h3 text-light">{category}</CardTitle>
+                    <CardText className="text-muted h5">Category</CardText>
+                      <CardTitle className="h4 text-light">{category}</CardTitle>
                      
                     </CardBody>
                   </Card>
@@ -107,6 +118,10 @@ function ListingDetails({}) {
               </ListGroupItem>
             </ListGroup>
           </CardBody>
+       
+        </Col>
+        
+        </Row>
         </Card>
       </Col>
     </Row>

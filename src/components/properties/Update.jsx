@@ -15,6 +15,7 @@ import {
   Button,
   Container,
   Card,
+  CardText,
 } from "reactstrap";
 
 function Update() {
@@ -120,18 +121,21 @@ function NewListingForm({
   }
 
   return (
-    <Row className="m-5">
-      <Col md={4}>
-        <Card style={{ height: "100%" }}>
-          <img
-            src={urlData ? urlData : img_url}
-            style={{ width: "100%" }}
-            alt=""
-          />
-        </Card>
-      </Col>
-      <Col md={8}>
-        <Card style={{ height: "100%" }} className="p-5">
+    <Card style={{ height: "100%" }} className="py-2 px-5 m-5 contiainer-fluid">
+      <Row >
+        <Col md={4}>
+          <Card style={{ height: "auto" }}>
+            <img
+              src={urlData ? urlData : img_url}
+              style={{ width: "100%" }}
+              alt=""
+            />
+            <CardText className="p-1">
+              When you upload a new image, changes will appear here
+            </CardText>
+          </Card>
+        </Col>
+        <Col md={8}>
           <Form onSubmit={handleSubmit}>
             <Row>
               <Col md={6}>
@@ -318,9 +322,9 @@ function NewListingForm({
             </FormGroup>
             <Button>Add Listing</Button>
           </Form>
-        </Card>
-      </Col>
-    </Row>
+        </Col>
+      </Row>
+    </Card>
   );
 }
 

@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom";
 const Navigation = () => {
   // const [isActive, setisActive] = useState(second)
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-5 text-light">
       <div className="container-fluid">
-        <NavLink className="navbar-brand h1" to="/">
+        <NavLink className="navbar-brand h1" to="/" style={{color: "orange"}}>
           MAKAZI
         </NavLink>
 

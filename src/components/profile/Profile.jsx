@@ -19,13 +19,13 @@ function Profile() {
         margin: "auto",
       }}
     >
-      <h2 className="text-muted">My Profile</h2>
+      <h2 className="text-muted">Agent Profile</h2>
       <img
         alt="profile"
         src="https://picsum.photos/300/200"
         style={{
-          width: "150px",
-          height: "150px",
+          width: "120px",
+          height: "120px",
           borderRadius: "100%",
           margin: "0 auto",
           marginTop: "0.5rem",

@@ -19,6 +19,26 @@
         "Hardwood floors",
         "Covered car port"
       ]
+    },
+    {
+      "id": 101,
+      "name": "The Loard's Court",
+      "address": "1End of the Road Lane",
+      "summary": "10 BR 17 BA House w/ Garage",
+      "city": "Nairobi",
+      "county": "Nairobi",
+      "category": "Rent",
+      "description": "A cozy, two bedroom cabin on four acres. Modern plumbing, emergency generator for electrical outages. Propame heat and a wood stove with plenty of trees for fuel. Unpaved gravel driveway is approx 0.5 mile to main road. 15 minutes from downtown shopping",
+      "img_url": "https://res.cloudinary.com/hng-pre-internship/image/upload/v1659078754/cozyhomes/assets/pexels-binyamin-mellish-1396132_feo3st.jpg",
+      "bedrooms": "3",
+      "bathrooms": "3",
+      "size": 5800,
+      "price": "Ksh.7000000",
+      "features": [
+        "2 Bedrrom w/ all appliances",
+        "Hardwood floors",
+        "Covered car port"
+      ]
     }
   ],
   "users": [

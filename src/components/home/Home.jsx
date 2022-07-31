@@ -41,7 +41,7 @@ function Home() {
             your needs.
           </CardText>
           <Link to="/listings" style={{ width: "fit-content" }}>
-            <Button>Browse Listings</Button>
+            <Button className="text-light">Browse Listings</Button>
           </Link>
         </CardImgOverlay>
       </Card>
@@ -53,7 +53,7 @@ function Home() {
           <Col md={4} className="">
             <Card className="bg-dark py-5 px-3">
               <CardBody>
-                <CardTitle className="h3 text-light">Virtual Survey</CardTitle>
+                <CardTitle className="h3 text-warning">Virtual Survey</CardTitle>
                 <CardText className="text-muted">
                   You can catch a glimple of your dream property from the comfot
                   of your leaving room. Yes! No travelling.
@@ -64,7 +64,7 @@ function Home() {
           <Col md={4}>
             <Card className="bg-dark py-5 px-3">
               <CardBody>
-                <CardTitle className="h3 text-light">
+                <CardTitle className="h3 text-warning">
                   Choose your type
                 </CardTitle>
                 <CardText className="text-muted">
@@ -77,7 +77,7 @@ function Home() {
           <Col md={4}>
             <Card className="bg-dark py-5 px-3">
               <CardBody>
-                <CardTitle className="h3 text-light">Easy Payment</CardTitle>
+                <CardTitle className="h3 text-warning">Easy Payment</CardTitle>
                 <CardText className="text-muted">
                   We accept a wide range of payment methods, including card
                   payments, bank payments, and we also offer a loan payment
