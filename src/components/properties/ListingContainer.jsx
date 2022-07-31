@@ -10,7 +10,7 @@ function ListingContainer() {
   return (
     <div className="container-fluid">
       <Row>
-        <Col md={4} className="d-sm-none d-md-flex">
+        <Col md={4} className="d-xs-none d-sm-none d-md-block">
          <BlogList/>
         </Col>
         <Col sm={12} md={8}>
