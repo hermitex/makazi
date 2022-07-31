@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {
   Card,
-  CardBody,
   CardTitle,
   Col,
   Row,
@@ -11,18 +10,11 @@ import {
   Button,
 } from "reactstrap";
 
-function Listing({ listing, onDelete, onView, onUpdate }) {
+function Listing({ listing, onDelete }) {
   function handleDelete(listing) {
     onDelete(listing.id);
   }
 
-  function handleView(listing) {
-    onView(listing.id);
-  }
-
-  function handleUpdate(listing) {
-    onUpdate(listing);
-  }
   return (
     <>
       <Col md={12}>
@@ -32,6 +24,7 @@ function Listing({ listing, onDelete, onView, onUpdate }) {
               <img
                 src={listing.img_url}
                 style={{ width: "100%", height: "100%" }}
+                alt={listing.name}
               />
             </Col>
             <Col md={8} className="py-2 px-4">
@@ -64,7 +57,6 @@ function Listing({ listing, onDelete, onView, onUpdate }) {
                 }}
               >
                 <ListGroupItem
-                  
                   style={{
                     width: "100%",
                   }}
@@ -73,7 +65,6 @@ function Listing({ listing, onDelete, onView, onUpdate }) {
                   {listing.bedrooms}
                 </ListGroupItem>
                 <ListGroupItem
-                  
                   style={{
                     width: "100%",
                   }}
@@ -82,7 +73,6 @@ function Listing({ listing, onDelete, onView, onUpdate }) {
                   {listing.bathrooms}
                 </ListGroupItem>
                 <ListGroupItem
-                  
                   style={{
                     width: "100%",
                   }}
@@ -101,41 +91,36 @@ function Listing({ listing, onDelete, onView, onUpdate }) {
                 }}
               >
                 <ListGroupItem
-                  
                   style={{
                     width: "100%",
                   }}
                 >
-                  <Link to="/details" state={{listing}}>
+                  <Link to="/details" state={{ listing }}>
                     <Button
                       style={{
                         width: "100%",
                       }}
-                    
                     >
                       Details
                     </Button>
                   </Link>
                 </ListGroupItem>
                 <ListGroupItem
-                  
                   style={{
                     width: "100%",
                   }}
                 >
-                  <Link to="/update" state={{listing}}>
+                  <Link to="/update" state={{ listing }}>
                     <Button
                       style={{
                         width: "100%",
                       }}
-                      // onClick={() => handleUpdate(listing)}
                     >
                       Update
                     </Button>
                   </Link>
                 </ListGroupItem>
                 <ListGroupItem
-                  
                   style={{
                     width: "100%",
                   }}

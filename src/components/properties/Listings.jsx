@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Card, Container, Row } from "reactstrap";
+import { Card, Row } from "reactstrap";
 import useFetch from "../hooks/useFetch";
 import Search from "../search/Search";
+import Loader from "../spinner/Loader";
 import Listing from "./Listing";
 
 function Listings() {
@@ -33,7 +34,6 @@ function Listings() {
       <Card >
         <Search />
       </Card>
-{/* style={{ maxHeight: "100vh", overflowY: "auto" }} */}
       <Row >
         {listingsToShow
           ? listingsToShow.map((listing) => (
@@ -45,7 +45,7 @@ function Listings() {
                 onView={onView}
               />
             ))
-          : listings &&
+          : listings? <Loader /> :
             listings.map((listing) => (
               <Listing
                 key={listing.id}
