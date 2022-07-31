@@ -23,7 +23,7 @@ function Listing({ listing, onDelete }) {
             <Col md={4}>
               <img
                 src={
-                  listing.url.lenght
+                  listing.img_url.length
                     ? listing.img_url
                     : `https://via.placeholder.com/500x350.png?text=The+Agent+Has+Not+Posted+Photos`
                 }
