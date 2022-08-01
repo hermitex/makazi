@@ -25,7 +25,7 @@ function Listing({ listing, onDelete }) {
             <Col md={4}>
               <img
                 src={listing.imgUrl}
-                style={{ width: "100%", height: "260px" }}
+                style={{ width: "100%", height: "270px" }}
                 alt={listing.name}
               />
             </Col>
