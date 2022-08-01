@@ -190,6 +190,7 @@ function NewListingForm() {
                 id="price"
                 name="price"
                 placeholder="Listing Price"
+                type="number"
               />
             </FormGroup>
             <Row>
@@ -255,7 +256,7 @@ function NewListingForm() {
               </Col>
               <Col md={4}>
                 <FormGroup>
-                  <Label for="category">for:</Label>
+                  <Label for="category">Category</Label>
 
                   <Input
                     required
@@ -265,9 +266,9 @@ function NewListingForm() {
                     name="category"
                     type="select"
                   >
-                    <option defaultValue="Sale">Sale</option>
-                    <option>Rent</option>
-                    <option>Lease</option>
+                    <option selected disabled>Category</option>
+                    <option defaultValue="Rent">Rent</option>
+                    <option>Sale</option>
                   </Input>
                 </FormGroup>
               </Col>
