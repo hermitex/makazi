@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, {  useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { Card, Row } from "reactstrap";
 import useFetch from "../hooks/useFetch";
 import Search from "../search/Search";
@@ -38,26 +38,29 @@ function Listings() {
     }
   }
 
-  const sortedListings =useMemo(() =>   function sortBy(criteria){
-    let newListings;
-      if (criteria.toLowerCase() === "price") {
-        newListings = [...listings].sort((a, b) => a.price - b.price);
-        setListingsToShow(newListings);
-      } else if (criteria.toLowerCase() === "size") {
-        newListings = [...listings].sort((a, b) => a.size - b.size);
-        setListingsToShow(newListings);
-      } else if (criteria.toLowerCase() === "category") {
-        newListings = [...listings].sort((a, b) =>
-          a["category"].localeCompare(b["category"])
-        );
-        setListingsToShow(newListings);
-      }
-  }, [listings])
+  const sortedListings = useMemo(
+    () =>
+      function sortBy(criteria) {
+        let newListings;
+        if (criteria.toLowerCase() === "price") {
+          newListings = [...listings].sort((a, b) => a.price - b.price);
+          setListingsToShow(newListings);
+        } else if (criteria.toLowerCase() === "size") {
+          newListings = [...listings].sort((a, b) => a.size - b.size);
+          setListingsToShow(newListings);
+        } else if (criteria.toLowerCase() === "category") {
+          newListings = [...listings].sort((a, b) =>
+            a["category"].localeCompare(b["category"])
+          );
+          setListingsToShow(newListings);
+        }
+      },
+    [listings]
+  );
 
-function onSort(criteria){
-  // setCriteria(criteria);
-  sortedListings(criteria)
-}
+  function onSort(criteria) {
+    sortedListings(criteria);
+  }
 
   return (
     <>
