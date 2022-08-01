@@ -1,9 +1,13 @@
 import React from "react";
 
-function Response({ message, type, redirect }) {
+function Response({ messageClass }) {
   return (
-    <div className={"text-light py-2 px-1 bg-" + type}>
-      <small> {message} </small>
+    <div className={"text-light mb-2 py-2 px-1 bg-" + messageClass}>
+      <small>
+        {messageClass === "success"
+          ? "Listing added successfully!"
+          : "Listing add failed!"}
+      </small>
     </div>
   );
 }

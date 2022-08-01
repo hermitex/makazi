@@ -43,7 +43,9 @@ function NewListingForm() {
 
   const [urlData, setUrlData] = useState(null);
   const [uploadImage] = useCloudinary();
-  const [message, setMessage] = useState("");
+  const [messageClass, setMessageClass] = useState({
+   
+  });
 
   function getImageUrl(file) {
     const reader = new FileReader();
@@ -94,13 +96,13 @@ function NewListingForm() {
       let url = await uploadImage(ImgData);
       let result = await postListing({ ...listingData, imgUrl: url });
       if (Object.keys(result).length) {
-        setMessage("info");
+        setMessageClass("success");
         setTimeout(() => {
           window.location = "listings";
         }, 1500);
       }
     } catch (error) {
-      setMessage("danger");
+      setMessageClass("danger");
       console.log(error.message);
     }
   }
@@ -108,7 +110,7 @@ function NewListingForm() {
   return (
     <Row className="m-5">
       <Col md={12}>
-        <Response message={message} type={message} />
+        <Response messageClass={messageClass} />
       </Col>
       <Col md={4}>
         <Card style={{ height: "100%" }}>
