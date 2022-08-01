@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Col, Row, Button } from "reactstrap";
 function Search({onSearch}) {
-  const [searchData, setSearchData] = useState(null)
+  const [searchData, setSearchData] = useState("")
   function handleChange(event) {
     let searchValue = event.target.value;
     setSearchData(searchValue);
