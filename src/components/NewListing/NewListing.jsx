@@ -43,9 +43,7 @@ function NewListingForm() {
 
   const [urlData, setUrlData] = useState(null);
   const [uploadImage] = useCloudinary();
-  const [messageClass, setMessageClass] = useState({
-   
-  });
+  const [messageClass, setMessageClass] = useState(null);
 
   function getImageUrl(file) {
     const reader = new FileReader();
@@ -109,9 +107,11 @@ function NewListingForm() {
 
   return (
     <Row className="m-5">
-      <Col md={12}>
-        <Response messageClass={messageClass} />
-      </Col>
+      {messageClass ? (
+        <Col md={12}>
+          <Response messageClass={messageClass} />
+        </Col>
+      ) : null}
       <Col md={4}>
         <Card style={{ height: "100%" }}>
           <img src={urlData} style={{ width: "100%" }} alt="" />
