@@ -68,12 +68,7 @@ function Search({ onSearch, onSort, searchResults, onFilterByCategory }) {
       <Row className="d-flex">
         <Col md={3}>
           <FormGroup>
-            <Input
-              id="price"
-              name="select"
-              type="select"
-             
-            >
+            <Input id="price" name="select" type="select">
               <option>Any price</option>
               <option>Below 500k</option>
               <option>500k and above</option>
@@ -83,10 +78,13 @@ function Search({ onSearch, onSort, searchResults, onFilterByCategory }) {
         </Col>
         <Col md={3}>
           <FormGroup>
-            <Input id="exampleSelect" name="select" type="select"
-             onChange={handleFilterCategory}
+            <Input
+              id="exampleSelect"
+              name="select"
+              type="select"
+              onChange={handleFilterCategory}
             >
-              <option>Any type</option>
+              <option defaultValue="All">All</option>
               <option>For Rent</option>
               <option>For Sale</option>
             </Input>

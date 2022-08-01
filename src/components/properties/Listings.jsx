@@ -62,7 +62,9 @@ function Listings() {
     () =>
       function filterByCategory(category) {
         let newListings = [...listings].filter(
-          (listing) => listing.category.toLowerCase() === category.toLowerCase()
+          (listing) =>
+            listing.category.toLowerCase() === category.toLowerCase() &&
+            category.toUpperCase() !== "all"
         );
         setListingsToShow(newListings);
       },
