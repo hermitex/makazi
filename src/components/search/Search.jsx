@@ -85,8 +85,8 @@ function Search({ onSearch, onSort, searchResults, onFilterByCategory }) {
               onChange={handleFilterCategory}
             >
               <option defaultValue="All">All</option>
-              <option>For Rent</option>
-              <option>For Sale</option>
+              <option>Rent</option>
+              <option>Sale</option>
             </Input>
           </FormGroup>
         </Col>
