@@ -31,8 +31,8 @@ function Listing({ listing, onDelete }) {
             </Col>
             <Col md={8} className="py-2 px-4">
               <CardTitle className="text-muted">{listing.name}</CardTitle>
-              <CardTitle className="h2">Ksh.{listing.price}</CardTitle>
-              <CardTitle className="h2 text-muted">{listing.summary}</CardTitle>
+              <CardTitle className="h3">Ksh.{listing.price}</CardTitle>
+              <CardTitle className="h4 text-muted">{listing.summary}</CardTitle>
 
               <ul
                 className="list-unstyled d-flex justify-content-start"
@@ -55,7 +55,7 @@ function Listing({ listing, onDelete }) {
                 className="d-flex text-center"
                 style={{
                   width: "auto",
-                  marginTop: "0.5rem",
+                  marginTop: "0.3rem",
                 }}
               >
                 <ListGroupItem
@@ -89,7 +89,7 @@ function Listing({ listing, onDelete }) {
                 className="d-flex text-center"
                 style={{
                   width: "auto",
-                  marginTop: "0.5rem",
+                  marginTop: "0.3rem",
                 }}
               >
                 <ListGroupItem
