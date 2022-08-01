@@ -24,7 +24,7 @@ function ListingDetails({}) {
     category,
     type,
     description,
-    img_url,
+    imgUrl,
     bedrooms,
     bathrooms,
     size,
@@ -34,7 +34,7 @@ function ListingDetails({}) {
     <Row className="my-5 container-fluid">
       <Col md={3}>
         {/* <Card className="h-100">
-          <img src={img_url} alt="listing" />
+          <img src={imgUrl} alt="listing" />
         </Card> */}
         <Profile/>
       </Col>
@@ -43,7 +43,7 @@ function ListingDetails({}) {
         <Row>
         <Col md={3}>
         <Card className="h-100">
-          <img src={img_url} alt="listing" />
+          <img src={imgUrl} alt="listing" />
         </Card>
       
       </Col>
