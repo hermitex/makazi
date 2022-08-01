@@ -104,7 +104,9 @@ function NewListingForm() {
 
   return (
     <Row className="m-5">
-      <Response message={message} type={message} />
+      <Col md={12}>
+        <Response message={message} type={message} />
+      </Col>
       <Col md={4}>
         <Card style={{ height: "100%" }}>
           <img src={urlData} style={{ width: "100%" }} alt="" />
