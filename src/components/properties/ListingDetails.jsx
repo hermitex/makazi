@@ -48,11 +48,6 @@ function ListingDetails({}) {
             </Col>
             <Row>
               <Col md={3}>
-                <Link to="/listings">
-                  <Button>
-                    <i class="fa-solid fa-chevron-left"></i> Back
-                  </Button>
-                </Link>
                 <Card className="h-100">
                   <img src={imgUrl} alt="listing" />
                 </Card>
