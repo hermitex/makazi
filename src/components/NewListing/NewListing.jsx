@@ -104,7 +104,7 @@ function NewListingForm() {
 
   return (
     <Row className="m-5">
-      <Response message={message} type={message}/>
+      <Response message={message} type={message} />
       <Col md={4}>
         <Card style={{ height: "100%" }}>
           <img src={urlData} style={{ width: "100%" }} alt="" />
@@ -119,6 +119,7 @@ function NewListingForm() {
                 <FormGroup>
                   <Label for="name">Name</Label>
                   <Input
+                    required
                     onChange={handleChange}
                     value={listingData.name}
                     id="name"
@@ -133,6 +134,7 @@ function NewListingForm() {
                   <Label for="size">Size</Label>
 
                   <Input
+                    required
                     onChange={handleChange}
                     value={listingData.size}
                     id="size"
@@ -148,6 +150,7 @@ function NewListingForm() {
               <Label for="summary">Summary</Label>
 
               <Input
+                required
                 onChange={handleChange}
                 value={listingData.summary}
                 id="text"
@@ -160,6 +163,7 @@ function NewListingForm() {
               <Label for="price">Price</Label>
 
               <Input
+                required
                 onChange={handleChange}
                 value={listingData.price}
                 id="price"
@@ -173,6 +177,7 @@ function NewListingForm() {
                   <Label for="city">City</Label>
 
                   <Input
+                    required
                     onChange={handleChange}
                     value={listingData.city}
                     id="city"
@@ -186,6 +191,7 @@ function NewListingForm() {
                   <Label for="county">County</Label>
 
                   <Input
+                    required
                     onChange={handleChange}
                     value={listingData.county}
                     id="county"
@@ -201,6 +207,7 @@ function NewListingForm() {
                   <Label for="bedrooms">Bedrooms</Label>
 
                   <Input
+                    required
                     onChange={handleChange}
                     value={listingData.bedrooms}
                     id="bedrooms"
@@ -215,6 +222,7 @@ function NewListingForm() {
                   <Label for="bathrooms">Bathrooms</Label>
 
                   <Input
+                    required
                     onChange={handleChange}
                     value={listingData.bathrooms}
                     id="bathrooms"
@@ -229,6 +237,7 @@ function NewListingForm() {
                   <Label for="category">for:</Label>
 
                   <Input
+                    required
                     onChange={handleChange}
                     selected={listingData.category}
                     id="category"
@@ -248,6 +257,7 @@ function NewListingForm() {
               </Label>
               <Col sm={10}>
                 <Input
+                  required
                   onChange={handleChange}
                   selected={listingData.type}
                   id="type"
@@ -270,6 +280,7 @@ function NewListingForm() {
               </Label>
               <Col sm={12}>
                 <Input
+                  required
                   onChange={handleChange}
                   value={listingData.description}
                   id="description"
@@ -286,6 +297,7 @@ function NewListingForm() {
               </Label>
               <Col sm={10}>
                 <Input
+                  required
                   accept="images/*"
                   onChange={handleChange}
                   // value={listingData.imgUrl}
