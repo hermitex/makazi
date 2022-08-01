@@ -94,6 +94,20 @@ function NewListingForm() {
       let url = await uploadImage(ImgData);
       let result = await postListing({ ...listingData, imgUrl: url });
       if (Object.keys(result).length) {
+        setlistingData({
+          name: "",
+          summary: "",
+          city: "",
+          county: "",
+          category: "",
+          type: "",
+          description: "",
+          imgUrl: "",
+          bedrooms: "",
+          bathrooms: "",
+          size: "",
+          price: "",
+        })
         setMessageClass("success");
         setTimeout(() => {
           window.location = "listings";
