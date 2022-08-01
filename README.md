@@ -97,11 +97,7 @@ As User you should be able to:
 - The server should run on `http://localhost:3000` by default
 - If the port is busy, kindly feel free to change the port inside the server.js file
 - Once the server is up and running, visit the link  `http://localhost:3000` to access the application
-- Note that if you changed the port number, you will have a different port number on the link
-- At this point, you will see the home page
-- Great!!! Try to create some weather forecasts...
-- You could also allow GPS when prompted to get the forecasts for your current location
-
+  
  ****
 [Go Back to the top](#Makazi)
 
