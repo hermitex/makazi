@@ -56,8 +56,8 @@ function ListingDetails({}) {
                   <CardText>{description}</CardText>
                   <div className="">
                     <Row className="my-5 ">
-                      <Col xs={12} sm={12} md={4} className="">
-                        <Card className="bg-dark py-3 px-1">
+                      <Col xs={12} sm={12} md={4} className="mb-2">
+                        <Card className="bg-dark py-3 px-1" style={{width:'100%'}} >
                           <CardBody>
                             <CardText className="text-muted h5">
                               Offering at
@@ -68,8 +68,8 @@ function ListingDetails({}) {
                           </CardBody>
                         </Card>
                       </Col>
-                      <Col xs={12} sm={12} md={4}>
-                        <Card className="bg-dark py-3 px-1">
+                      <Col xs={12} sm={12} md={4} className="mb-2">
+                        <Card className="bg-dark py-3 px-1" style={{width:'100%'}}>
                           <CardBody>
                             <CardText className="text-muted h5">
                               Location
@@ -80,8 +80,8 @@ function ListingDetails({}) {
                           </CardBody>
                         </Card>
                       </Col>
-                      <Col xs={12} sm={12} md={4}>
-                        <Card className="bg-dark py-3 px-1">
+                      <Col xs={12} sm={12} md={4} className="mb-2">
+                        <Card className="bg-dark py-3 px-1" style={{width:'100%'}}>
                           <CardBody>
                             <CardText className="text-muted h5">
                               Category
