@@ -5,14 +5,17 @@ import Blog from "./Blog";
 
 function BlogList() {
   return (
-    <div style={{ width: "100%", borderRadius: "0.5rem" }} className="bg-light p-2">
+    <div
+      style={{ width: "100%", borderRadius: "0.5rem" }}
+      className="bg-light p-2"
+    >
       <ul
         className="list-unstyled d-flex justify-content-between p-2"
         style={{ width: "100%" }}
       >
         <li>Latest Blog</li>
         <li>
-          <Link to="/new-listing">
+          <Link to="/new-blog">
             <Button>Add New Blog</Button>
           </Link>
         </li>
