@@ -27,7 +27,7 @@ function Listings() {
   }
 
   function onSearch(query) {
-    if (query.trim().length === 1) {
+    if (query.trim().length === 0) {
       setListingsToShow([]);
     } else if (query.trim().length > 1) {
       let newListings = listings.filter((listing) =>
