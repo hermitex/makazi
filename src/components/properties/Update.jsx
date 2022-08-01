@@ -103,7 +103,6 @@ function NewListingForm({
   }
 
   async function postListing(data) {
-    console.log("postListing called with data: " + JSON.stringify(data));
     try {
       await axios.patch(`https://makazi-api.herokuapp.com/api/v1/listings/${id}`, data);
     } catch (error) {
