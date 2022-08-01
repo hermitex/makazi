@@ -19,11 +19,6 @@ function Listing({ listing, onDelete }) {
 
   return (
     <>
-      <Col md={12} style={{width: 'fit-content'}}>
-        <h2 style={{ borderBottom: "0.3rem solid orange text-light" }} className="my-1">
-          <span style={{ color: "grey" }}>Category:</span> {listing.category}
-        </h2>
-      </Col>
       <Col md={12}>
         <Card className="mt-3 mb-2">
           <Row>
