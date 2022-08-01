@@ -53,6 +53,9 @@ function Home() {
           <Col md={4} className="mb-2">
             <Card className="bg-dark py-5 px-3">
               <CardBody>
+                <div>
+                <i className="fa-solid fa-video" style={{fontSize:'3rem', color: 'skyblue'}}></i>
+                </div>
                 <CardTitle className="h3 text-warning">Virtual Survey</CardTitle>
                 <CardText className="text-muted">
                   You can catch a glimple of your dream property from the comfot
@@ -64,6 +67,9 @@ function Home() {
           <Col md={4} className="mb-2">
             <Card className="bg-dark py-5 px-3">
               <CardBody>
+              <div>
+                <i className="fa-solid fa-clipboard-check" style={{fontSize:'3rem', color: 'skyblue'}}></i>
+                </div>
                 <CardTitle className="h3 text-warning">
                   Choose your type
                 </CardTitle>
@@ -77,6 +83,9 @@ function Home() {
           <Col md={4} className="mb-2">
             <Card className="bg-dark py-5 px-3">
               <CardBody>
+              <div>
+                <i className="fa-solid fa-money-bill-1" style={{fontSize:'3rem', color: 'skyblue'}}></i>
+                </div>
                 <CardTitle className="h3 text-warning">Easy Payment</CardTitle>
                 <CardText className="text-muted">
                   We accept a wide range of payment methods, including card
