@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Row } from "reactstrap";
 import useFetch from "../hooks/useFetch";
 import Search from "../search/Search";
@@ -11,6 +11,7 @@ function Listings() {
     "https://makazi-api.herokuapp.com/api/v1/listings"
   );
   const [listingsToShow, setListingsToShow] = useState(null);
+  const [criteria, setCriteria] = useState("")
   async function onDelete(id) {
     try {
       await axios.delete(
@@ -37,9 +38,15 @@ function Listings() {
     }
   }
 
+  useEffect(() => {   
+ 
+  }, [criteria])
+  
+  
+
   function onSort(criteria) {
     let newListings;
-    setListingsToShow([])
+    setCriteria(criteria)
     if (criteria.toLowerCase() === "price") {   
       newListings = listings.sort((a, b) => a.price - b.price);
       setListingsToShow(newListings);
