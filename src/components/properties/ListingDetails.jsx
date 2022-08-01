@@ -50,9 +50,9 @@ function ListingDetails({}) {
                   <img src={imgUrl} alt="listing" />
                 </Card>
               </Col>
-              <Col md={9}>
-                <CardTitle className="h2 text-muted">{name}</CardTitle>
+              <Col md={9}>                
                 <CardBody>
+                <CardTitle className="h2 text-muted">{name}</CardTitle>
                   <CardText>{description}</CardText>
                   <div className="">
                     <Row className="my-5 ">
