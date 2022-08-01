@@ -39,7 +39,8 @@ function Listings() {
 
   function onSort(criteria) {
     let newListings;
-    if (criteria.toLowerCase() === "price") {
+    setListingsToShow([])
+    if (criteria.toLowerCase() === "price") {   
       newListings = listings.sort((a, b) => a.price - b.price);
       setListingsToShow(newListings);
     } else if (criteria.toLowerCase() === "size") {
@@ -51,7 +52,6 @@ function Listings() {
       );
       setListingsToShow(newListings);
     }
-    console.log(criteria, listings);
   }
 
   return (
