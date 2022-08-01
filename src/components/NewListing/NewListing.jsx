@@ -15,6 +15,7 @@ import {
   Card,
 } from "reactstrap";
 import useCloudinary from "../hooks/useCloudinary";
+import Response from "../response/Response";
 
 function NewListing() {
   return (
@@ -42,6 +43,7 @@ function NewListingForm() {
 
   const [urlData, setUrlData] = useState(null);
   const [uploadImage] = useCloudinary();
+  const [message, setMessage] = useState("");
 
   function getImageUrl(file) {
     const reader = new FileReader();
@@ -68,15 +70,14 @@ function NewListingForm() {
     setlistingData({ ...listingData, [key]: value });
   }
 
-  function postListing(data) {
-    console.log(data);
+  async function postListing(data) {
     try {
-      axios
-        .post(`https://makazi-api.herokuapp.com/api/v1/listings`, data)
-        .then((data) => {
-          // window.location = "listings";
-          console.log("Posted listing: " + data );
-        });
+      let response = await axios.post(
+        `https://makazi-api.herokuapp.com/api/v1/listings`,
+        data
+      );
+      let listing = await response.data;
+      return listing;
     } catch (error) {
       console.error(error);
     }
@@ -91,14 +92,19 @@ function NewListingForm() {
 
     try {
       let url = await uploadImage(ImgData);
-      postListing({ ...listingData, imgUrl: url });
+      let result = await postListing({ ...listingData, imgUrl: url });
+      if (result.length) {
+        setMessage("success");
+      }
     } catch (error) {
+      setMessage("danger");
       console.log(error.message);
     }
   }
 
   return (
     <Row className="m-5">
+      <Response message={message} type={message}/>
       <Col md={4}>
         <Card style={{ height: "100%" }}>
           <img src={urlData} style={{ width: "100%" }} alt="" />
@@ -107,6 +113,7 @@ function NewListingForm() {
       <Col md={8}>
         <Card style={{ height: "100%" }} className="p-5">
           <Form onSubmit={handleSubmit}>
+            {}
             <Row>
               <Col md={6}>
                 <FormGroup>
