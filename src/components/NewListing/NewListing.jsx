@@ -93,10 +93,11 @@ function NewListingForm() {
     try {
       let url = await uploadImage(ImgData);
       let result = await postListing({ ...listingData, imgUrl: url });
-      console.log(result);
-      if (result.length) {
+      if (Object.keys(result).length) {
         setMessage("success");
-        window.location = 'listings';
+        setTimeout(() => {
+          window.location = "listings";
+        }, 1500);
       }
     } catch (error) {
       setMessage("danger");
