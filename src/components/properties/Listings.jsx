@@ -34,6 +34,8 @@ function Listings() {
     console.log(listing);
   }
 
+  console.log(listings);
+
   return (
     <>
       <Card>
