@@ -38,7 +38,7 @@ function Listings() {
     }
   }
 
-  const sortedListings =useMemo(() =>   function sortBy(){
+  useMemo(() =>   function sortBy(){
     console.log(criteria)
     let newListings;
       if (criteria.toLowerCase() === "price") {
@@ -57,7 +57,6 @@ function Listings() {
 
 function onSort(criteria){
   setCriteria(criteria);
-  console.log(sortedListings())
 }
 
   return (
