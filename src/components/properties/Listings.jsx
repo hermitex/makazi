@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Card, Row } from "reactstrap";
 import useFetch from "../hooks/useFetch";
 import Search from "../search/Search";
@@ -11,7 +11,7 @@ function Listings() {
     "https://makazi-api.herokuapp.com/api/v1/listings"
   );
   const [listingsToShow, setListingsToShow] = useState(null);
-  const [criteria, setCriteria] = useState("")
+  const [criteria, setCriteria] = useState("");
   async function onDelete(id) {
     try {
       await axios.delete(
@@ -38,28 +38,26 @@ function Listings() {
     }
   }
 
-  useEffect(() => {   
- 
-  }, [criteria])
-  
-  
+  const onSort = useMemo( 
+    (criteria) => {
+      let newListings;
+      setCriteria(criteria);
+      if (criteria.toLowerCase() === "price") {
+        newListings = [...listings].sort((a, b) => a.price - b.price);
+        setListingsToShow(newListings);
+      } else if (criteria.toLowerCase() === "size") {
+        newListings = [...listings].sort((a, b) => a.size - b.size);
+        setListingsToShow(newListings);
+      } else if (criteria.toLowerCase() === "category") {
+        newListings = [...listings].sort((a, b) =>
+          a["category"].localeCompare(b["category"])
+        );
+        setListingsToShow(newListings);
+      }
+    },
 
-  function onSort(criteria) {
-    let newListings;
-    setCriteria(criteria)
-    if (criteria.toLowerCase() === "price") {   
-      newListings = listings.sort((a, b) => a.price - b.price);
-      setListingsToShow(newListings);
-    } else if (criteria.toLowerCase() === "size") {
-      newListings = listings.sort((a, b) => a.size - b.size);
-      setListingsToShow(newListings);
-    } else if (criteria.toLowerCase() === "category") {
-      newListings = listings.sort((a, b) =>
-        a["category"].localeCompare(b["category"])
-      );
-      setListingsToShow(newListings);
-    }
-  }
+    [listings]
+  );
 
   return (
     <>
