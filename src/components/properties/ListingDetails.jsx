@@ -30,12 +30,12 @@ function ListingDetails({}) {
     price,
   } = listing;
   return (
-    <Row className="my-5">
+    <Row className="my-5 mx-3">
       <Col xs={12} sm={12} md={3}>
         <Profile />
       </Col>
       <Col xs={12} sm={12} md={9}>
-        <Card className="p-5">
+        <Card className="py-5 px-3">
           <Row>
             <Col xs={12} sm={12} md={12} className="mb-1">
               <Link to="/listings">
