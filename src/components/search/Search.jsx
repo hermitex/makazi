@@ -12,7 +12,7 @@ function Search({ onSearch, onSort, searchResults, onFilterByCategory }) {
     onSort(criteria);
   }
 
-  function handleFilterByType(event) {
+  function handleFilterCategory(event) {
     let category = event.target.value;
     onFilterByCategory(category);
   }
@@ -72,7 +72,7 @@ function Search({ onSearch, onSort, searchResults, onFilterByCategory }) {
               id="price"
               name="select"
               type="select"
-              onChange={handleFilterByType}
+             
             >
               <option>Any price</option>
               <option>Below 500k</option>
@@ -83,7 +83,9 @@ function Search({ onSearch, onSort, searchResults, onFilterByCategory }) {
         </Col>
         <Col md={3}>
           <FormGroup>
-            <Input id="exampleSelect" name="select" type="select">
+            <Input id="exampleSelect" name="select" type="select"
+             onChange={handleFilterCategory}
+            >
               <option>Any type</option>
               <option>For Rent</option>
               <option>For Sale</option>
