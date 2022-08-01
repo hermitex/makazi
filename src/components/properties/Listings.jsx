@@ -61,14 +61,17 @@ function Listings() {
   const filteredCategory = useMemo(
     () =>
       function filterByCategory(category) {
-        let newListings = [...listings].filter(
-          (listing) =>
-            listing.category.toLowerCase() === category.toLowerCase() &&
-            category.toUpperCase() !== "all"
-        );
-        setListingsToShow(newListings);
+        if (criteria.toLowerCase() === "all") {
+          setListingsToShow(listings);
+        } else {
+          let newListings = [...listings].filter(
+            (listing) =>
+              listing.category.toLowerCase() === category.toLowerCase()
+          );
+          setListingsToShow(newListings);
+        }
       },
-    [listings]
+    [listings, criteria]
   );
 
   function onSort(criteria) {
