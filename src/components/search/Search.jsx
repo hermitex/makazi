@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Col, Row, Button } from "reactstrap";
-function Search({onSearch, searchResults}) {
+function Search({onSearch,onSort, searchResults}) {
   const [searchData, setSearchData] = useState("")
   function handleChange(event) {
     let searchValue = event.target.value;
     setSearchData(searchValue);
     onSearch(searchData)
+  }
+  function handleSort(event) {
+    let criteria = event.target.value;
+    onSort(criteria)
   }
   return (
     <Form
@@ -37,10 +41,10 @@ function Search({onSearch, searchResults}) {
           <FormGroup>
             <Label for="search">Sort By</Label>
             <Input id="price" name="select" type="select"
-             style={{
-            
+             style={{            
               width: "100%",
             }}
+            onChange={handleSort}
             >
               <option>Price</option>
               <option>Size</option>

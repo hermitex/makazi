@@ -37,10 +37,15 @@ function Listings() {
     }
   }
 
+  function onSort(criteria){
+    console.log(criteria, listings);
+  }
+
   return (
     <>
       <Card>
         <Search
+        onSort={onSort}
           onSearch={onSearch}
           searchResults={
             listingsToShow
