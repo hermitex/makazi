@@ -111,7 +111,7 @@ function NewListingForm() {
         setMessageClass("success");
         setTimeout(() => {
           window.location = "listings";
-        }, 1500);
+        }, 2000);
       }
     } catch (error) {
       setMessageClass("danger");
