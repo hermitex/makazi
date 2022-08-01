@@ -39,18 +39,18 @@ function Listings() {
 
   function onSort(criteria) {
     let newListings;
-    setListingsToShow([])
-    if (criteria.toLowerCase() === "price") {   
+    setListingsToShow([]);
+    if (criteria.toLowerCase() === "price") {
       newListings = listings.sort((a, b) => a.price - b.price);
-      setListingsToShow(newListings);
+      setListingsToShow([{ ...newListings, sortBy: "Price" }]);
     } else if (criteria.toLowerCase() === "size") {
       newListings = listings.sort((a, b) => a.size - b.size);
-      setListingsToShow(newListings);
+      setListingsToShow([{ ...newListings, sortBy: "Size" }]);
     } else if (criteria.toLowerCase() === "category") {
       newListings = listings.sort((a, b) =>
         a["category"].localeCompare(b["category"])
       );
-      setListingsToShow(newListings);
+      setListingsToShow([{ ...newListings, sortBy: "Category" }]);
     }
   }
 
