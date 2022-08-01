@@ -37,7 +37,20 @@ function Listings() {
     }
   }
 
-  function onSort(criteria){
+  function onSort(criteria) {
+    let newListings;
+    if (criteria.toLowerCase() === "price") {
+      newListings = listings.sort((a, b) => +a.price - +b.price);
+      setListingsToShow(newListings);
+    } else if (criteria.toLowerCase() === "size") {
+      newListings = listings.sort((a, b) => +a.size - +b.size);
+      setListingsToShow(newListings);
+    } else if (criteria.toLowerCase() === "category") {
+      newListings = listings.sort((a, b) =>
+        a["category"].localeCompare(b["category"])
+      );
+      setListingsToShow(newListings);
+    }
     console.log(criteria, listings);
   }
 
@@ -45,7 +58,7 @@ function Listings() {
     <>
       <Card>
         <Search
-        onSort={onSort}
+          onSort={onSort}
           onSearch={onSearch}
           searchResults={
             listingsToShow
