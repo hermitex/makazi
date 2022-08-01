@@ -26,30 +26,33 @@ function Listings() {
     }
   }
 
+  function onSearch(query) {
+    if (query.trim().length === 1) {
+      setListingsToShow([]);
+    } else if (query.trim().length > 1) {
+      let newListings = listings.filter((listing) =>
+        listing.county.toLowerCase().includes(query.toLowerCase())
+      );
+      setListingsToShow(newListings);
+    }
+  }
+
   return (
     <>
       <Card>
-        <Search />
+        <Search onSearch={onSearch} />
       </Card>
       <Row>
         {listingsToShow ? (
           listingsToShow.map((listing) => (
-            <Listing
-              key={listing.id}
-              listing={listing}
-              onDelete={onDelete}
-            />
+            <Listing key={listing.id} listing={listing} onDelete={onDelete} />
           ))
         ) : listings === null ? (
           <Loader />
         ) : (
           listings &&
           listings.map((listing) => (
-            <Listing
-              key={listing.id}
-              listing={listing}
-              onDelete={onDelete}
-            />
+            <Listing key={listing.id} listing={listing} onDelete={onDelete} />
           ))
         )}
       </Row>

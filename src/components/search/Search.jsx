@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Col, Row, Button } from "reactstrap";
-function Search() {
+function Search({onSearch}) {
+  const [searchData, setSearchData] = useState(null)
+  function handleChange(event) {
+    let searchValue = event.target.value;
+    setSearchData(searchValue);
+    onSearch(searchData)
+  }
   return (
     <Form
       className="p-1 "
@@ -14,16 +20,15 @@ function Search() {
         <Col md={6}>
           <FormGroup>
             <Label for="search">Showing 300 results</Label>
-
             <Input
               id="search"
               name="select"
               type="search"
               placeholder="Search"
-              style={{
-            
+              style={{            
                 width: "100%",
               }}
+              onChange={handleChange}
             ></Input>
           </FormGroup>
         </Col>
