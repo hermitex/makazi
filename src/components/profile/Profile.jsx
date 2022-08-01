@@ -83,7 +83,7 @@ function Profile() {
             </ul>
           </address>
         </CardText>
-        <Button>Edit</Button>
+        {/* <Button>Edit</Button> */}
       </CardBody>
     </Card>
   );
