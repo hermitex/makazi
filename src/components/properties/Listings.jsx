@@ -39,19 +39,18 @@ function Listings() {
   }
 
   const sortedListings =useMemo(() =>   function sortBy(){
+    console.log(criteria)
     let newListings;
       if (criteria.toLowerCase() === "price") {
         newListings = [...listings].sort((a, b) => a.price - b.price);
-        setListingsToShow(newListings);
       } else if (criteria.toLowerCase() === "size") {
         newListings = [...listings].sort((a, b) => a.size - b.size);
-        setListingsToShow(newListings);
       } else if (criteria.toLowerCase() === "category") {
         newListings = [...listings].sort((a, b) =>
           a["category"].localeCompare(b["category"])
         );
-        setListingsToShow(newListings);
       }
+      return newListings;
   }, [listings, criteria])
 
 function onSort(criteria){
