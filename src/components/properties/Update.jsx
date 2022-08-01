@@ -67,7 +67,7 @@ function NewListingForm({
     category,
     type,
     description,
-    imgUrl: "",
+    imgUrl,
     bedrooms,
     bathrooms,
     size,
