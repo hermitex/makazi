@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-// import "./NewListing.css";
-
 import axios from "axios";
 
 import {
@@ -16,6 +14,7 @@ import {
   Container,
   Card,
 } from "reactstrap";
+import useCloudinary from "../hooks/useCloudinary";
 
 function NewListing() {
   return (
@@ -42,6 +41,7 @@ function NewListingForm() {
   });
 
   const [urlData, setUrlData] = useState(null);
+  const [uploadImage] = useCloudinary();
 
   function getImageUrl(file) {
     const reader = new FileReader();
@@ -61,8 +61,8 @@ function NewListingForm() {
     }
 
     if (event.target.type === "file") {
-      const file = event.target.files[0];
-      getImageUrl(file);
+      value = event.target.files[0];
+      getImageUrl(value);
     }
 
     setlistingData({ ...listingData, [key]: value });
@@ -70,27 +70,25 @@ function NewListingForm() {
 
   function postListing(data) {
     try {
-      axios.post(
-        `https://makazi-api.herokuapp.com/api/v1/listings`,
-        data
-      );
+      axios.post(`https://makazi-api.herokuapp.com/api/v1/listings`, data);
     } catch (error) {
       console.error(error);
     }
   }
 
   async function handleSubmit(event) {
-    event.preventDefault();  
-    postListing(listingData);
-    // try {
-    //   let result =  await axios.post("https://makazi-properties-api.herokuapp.com/api/v1/upload", {
-    //     urlData
-    //   });
+    event.preventDefault();
+    const ImgData = new FormData();
+    ImgData.append("file", listingData.img_url);
+    ImgData.append("upload_preset", "makazi");
+    ImgData.append("cloud_name", "hng-pre-internship");
 
-    //   postListing({ ...listingData, img_url: result.data.secure_url });
-    // } catch (error) {
-    //   console.log(error.message);
-    // }
+    try {
+      let url = await uploadImage(ImgData);
+      postListing({ ...listingData, img_url: url });
+    } catch (error) {
+      console.log(error.message);
+    }
   }
 
   return (
@@ -277,7 +275,7 @@ function NewListingForm() {
                 <Input
                   accept="images/*"
                   onChange={handleChange}
-                  value={listingData.img_url}
+                  // value={listingData.img_url}
                   id="img_url"
                   name="img_url"
                   type="file"
