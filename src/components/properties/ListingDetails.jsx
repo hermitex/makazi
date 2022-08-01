@@ -30,7 +30,7 @@ function ListingDetails({}) {
     price,
   } = listing;
   return (
-    <Row className="my-5 container-fluid">
+    <Row className="my-5">
       <Col xs={12} sm={12} md={3}>
         <Profile />
       </Col>
