@@ -26,7 +26,7 @@ function App() {
           <Route path="/new" element={<NewListing />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/new-blog" element={<BlogEditor />} />
+          {/* <Route path="/new-blog" element={<BlogEditor />} /> */}
         </Routes>
       </Router>
     </div>
