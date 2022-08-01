@@ -33,7 +33,7 @@ function NewListingForm() {
     category: "",
     type: "",
     description: "",
-    img_url: "",
+    imgUrl: "",
     bedrooms: "",
     bathrooms: "",
     size: "",
@@ -80,13 +80,13 @@ function NewListingForm() {
   async function handleSubmit(event) {
     event.preventDefault();
     const ImgData = new FormData();
-    ImgData.append("file", listingData.img_url);
+    ImgData.append("file", listingData.imgUrl);
     ImgData.append("upload_preset", "makazi");
     ImgData.append("cloud_name", "hng-pre-internship");
 
     try {
       let url = await uploadImage(ImgData);
-      postListing({ ...listingData, img_url: url });
+      postListing({ ...listingData, imgUrl: url });
     } catch (error) {
       console.log(error.message);
     }
@@ -269,16 +269,16 @@ function NewListingForm() {
             </FormGroup>
 
             <FormGroup row>
-              <Label for="img_url" sm={2}>
+              <Label for="imgUrl" sm={2}>
                 File
               </Label>
               <Col sm={10}>
                 <Input
                   accept="images/*"
                   onChange={handleChange}
-                  // value={listingData.img_url}
-                  id="img_url"
-                  name="img_url"
+                  // value={listingData.imgUrl}
+                  id="imgUrl"
+                  name="imgUrl"
                   type="file"
                 />
                 <FormText>Add multiple images for your listing.</FormText>
