@@ -40,10 +40,10 @@ function Listings() {
   function onSort(criteria) {
     let newListings;
     if (criteria.toLowerCase() === "price") {
-      newListings = listings.sort((a, b) => +a.price - +b.price);
+      newListings = listings.sort((a, b) => a.price - b.price);
       setListingsToShow(newListings);
     } else if (criteria.toLowerCase() === "size") {
-      newListings = listings.sort((a, b) => +a.size - +b.size);
+      newListings = listings.sort((a, b) => a.size - b.size);
       setListingsToShow(newListings);
     } else if (criteria.toLowerCase() === "category") {
       newListings = listings.sort((a, b) =>

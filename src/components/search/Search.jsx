@@ -46,6 +46,7 @@ function Search({onSearch,onSort, searchResults}) {
             }}
             onChange={handleSort}
             >
+              <option defaultValue="Select Sort Criteria" disabled >Click to sort</option>
               <option>Price</option>
               <option>Size</option>
               <option>Category</option>
