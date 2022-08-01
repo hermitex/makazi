@@ -105,6 +105,7 @@ function NewListingForm({
   async function postListing(data) {
     try {
       await axios.patch(`https://makazi-api.herokuapp.com/api/v1/listings/${id}`, data);
+      window.location = '/listings';
     } catch (error) {
       console.error(error);
     }

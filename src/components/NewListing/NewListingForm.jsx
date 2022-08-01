@@ -58,6 +58,7 @@ function NewListingForm() {
     console.log(data);
     try {
       await axios.post("http://localhost:8002/properties", data);
+      window.location = '/listings';
     } catch (error) {
       console.error(error);
     }
