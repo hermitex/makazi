@@ -80,8 +80,7 @@ function Home() {
                 <CardTitle className="h3 text-warning">Easy Payment</CardTitle>
                 <CardText className="text-muted">
                   We accept a wide range of payment methods, including card
-                  payments, bank payments, and we also offer a loan payment
-                  method.
+                  payments, bank payments.
                 </CardText>
               </CardBody>
             </Card>
