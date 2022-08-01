@@ -253,10 +253,10 @@ function NewListingForm() {
             </FormGroup>
 
             <FormGroup row>
-              <Label for="description" sm={2}>
+              <Label for="description" sm={12}>
                 Description
               </Label>
-              <Col sm={10}>
+              <Col sm={12}>
                 <Input
                   onChange={handleChange}
                   value={listingData.description}
