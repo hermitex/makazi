@@ -24,7 +24,7 @@ function Search({onSearch}) {
               id="search"
               name="select"
               type="search"
-              placeholder="Search"
+              placeholder="Enter location to search"
               style={{            
                 width: "100%",
               }}
