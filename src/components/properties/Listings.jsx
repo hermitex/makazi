@@ -55,7 +55,7 @@ function Listings() {
 
 function onSort(criteria){
   setCriteria(criteria);
-  console.log(sortedListings)
+  console.log(sortedListings())
 }
 
   return (
