@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Col, Row, Button } from "reactstrap";
-function Search({onSearch,onSort, searchResults}) {
-  const [searchData, setSearchData] = useState("")
+function Search({ onSearch, onSort, searchResults, onFilterByCategory }) {
+  const [searchData, setSearchData] = useState("");
   function handleChange(event) {
     let searchValue = event.target.value;
     setSearchData(searchValue);
-    onSearch(searchData)
+    onSearch(searchData);
   }
   function handleSort(event) {
     let criteria = event.target.value;
-    onSort(criteria)
+    onSort(criteria);
   }
+
+  function handleFilterByType(event) {
+    let category = event.target.value;
+    onFilterByCategory(category);
+  }
+
   return (
     <Form
       className="p-1 "
@@ -29,7 +35,7 @@ function Search({onSearch,onSort, searchResults}) {
               name="select"
               type="search"
               placeholder="Enter location to search"
-              style={{            
+              style={{
                 width: "100%",
               }}
               onChange={handleChange}
@@ -40,13 +46,18 @@ function Search({onSearch,onSort, searchResults}) {
         <Col md={6}>
           <FormGroup>
             <Label for="search">Sort By</Label>
-            <Input id="price" name="select" type="select"
-             style={{            
-              width: "100%",
-            }}
-            onChange={handleSort}
+            <Input
+              id="price"
+              name="select"
+              type="select"
+              style={{
+                width: "100%",
+              }}
+              onChange={handleSort}
             >
-              <option defaultValue="Select Sort Criteria" disabled >Click to sort</option>
+              <option defaultValue="Select Sort Criteria" disabled>
+                Click to sort
+              </option>
               <option>Price</option>
               <option>Size</option>
               <option>Category</option>
@@ -57,7 +68,12 @@ function Search({onSearch,onSort, searchResults}) {
       <Row className="d-flex">
         <Col md={3}>
           <FormGroup>
-            <Input id="price" name="select" type="select">
+            <Input
+              id="price"
+              name="select"
+              type="select"
+              onChange={handleFilterByType}
+            >
               <option>Any price</option>
               <option>Below 500k</option>
               <option>500k and above</option>

@@ -58,8 +58,23 @@ function Listings() {
     [listings]
   );
 
+  const filteredCategory = useMemo(
+    () =>
+      function filterByCategory(category) {
+        let newListings = [...listings].filter(
+          (listing) => listing.category.toLowerCase() === category.toLowerCase()
+        );
+        setListingsToShow(newListings);
+      },
+    [listings]
+  );
+
   function onSort(criteria) {
     sortedListings(criteria);
+  }
+
+  function onFilterByCategory(category) {
+    filteredCategory(category);
   }
 
   return (
@@ -68,6 +83,7 @@ function Listings() {
         <Search
           onSort={onSort}
           onSearch={onSearch}
+          onFilterByCategory={onFilterByCategory}
           searchResults={
             listingsToShow
               ? listingsToShow && listingsToShow.length
