@@ -26,16 +26,6 @@ function Listings() {
     }
   }
 
-  function onUpdate(listing) {
-    console.log(listing);
-  }
-
-  function onView(listing) {
-    console.log(listing);
-  }
-
-  console.log(listings);
-
   return (
     <>
       <Card>
@@ -48,8 +38,6 @@ function Listings() {
               key={listing.id}
               listing={listing}
               onDelete={onDelete}
-              onUpdate={onUpdate}
-              onView={onView}
             />
           ))
         ) : listings === null ? (
@@ -61,8 +49,6 @@ function Listings() {
               key={listing.id}
               listing={listing}
               onDelete={onDelete}
-              onUpdate={onUpdate}
-              onView={onView}
             />
           ))
         )}

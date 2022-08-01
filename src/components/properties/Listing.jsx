@@ -52,8 +52,8 @@ function Listing({ listing, onDelete }) {
                 horizontal
                 className="d-flex text-center"
                 style={{
-                  width: "100%",
-                  marginTop: "2rem",
+                  width: "auto",
+                  marginTop: "0.5rem",
                 }}
               >
                 <ListGroupItem
@@ -86,8 +86,8 @@ function Listing({ listing, onDelete }) {
                 horizontal
                 className="d-flex text-center"
                 style={{
-                  width: "100%",
-                  marginTop: "2rem",
+                  width: "auto",
+                  marginTop: "0.5rem",
                 }}
               >
                 <ListGroupItem
