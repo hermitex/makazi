@@ -31,13 +31,13 @@ function ListingDetails({}) {
   } = listing;
   return (
     <Row className="my-5 container-fluid">
-      <Col md={3}>
+      <Col xs={12} sm={12} md={3}>
         <Profile />
       </Col>
-      <Col md={9}>
+      <Col xs={12} sm={12} md={9}>
         <Card className="p-5">
           <Row>
-            <Col md={12} className="mb-1">
+            <Col xs={12} sm={12} md={12} className="mb-1">
               <Link to="/listings">
                 <Button>
                   <i className="fa-solid fa-chevron-left"></i> Back
@@ -45,18 +45,18 @@ function ListingDetails({}) {
               </Link>
             </Col>
             <Row>
-              <Col md={3}>
+              <Col xs={12} sm={12} md={3}>
                 <Card style={{ height: "auto" }}>
                   <img src={imgUrl} alt="listing" />
                 </Card>
               </Col>
-              <Col md={9}>                
+              <Col xs={12} sm={12} md={9}>                
                 <CardBody>
                 <CardTitle className="h2 text-muted">{name}</CardTitle>
                   <CardText>{description}</CardText>
                   <div className="">
                     <Row className="my-5 ">
-                      <Col md={4} className="">
+                      <Col xs={12} sm={12} md={4} className="">
                         <Card className="bg-dark py-3 px-1">
                           <CardBody>
                             <CardText className="text-muted h5">
@@ -68,7 +68,7 @@ function ListingDetails({}) {
                           </CardBody>
                         </Card>
                       </Col>
-                      <Col md={4}>
+                      <Col xs={12} sm={12} md={4}>
                         <Card className="bg-dark py-3 px-1">
                           <CardBody>
                             <CardText className="text-muted h5">
@@ -80,7 +80,7 @@ function ListingDetails({}) {
                           </CardBody>
                         </Card>
                       </Col>
-                      <Col md={4}>
+                      <Col xs={12} sm={12} md={4}>
                         <Card className="bg-dark py-3 px-1">
                           <CardBody>
                             <CardText className="text-muted h5">
