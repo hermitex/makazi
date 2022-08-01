@@ -29,7 +29,7 @@ function Listings() {
   function onSearch(query) {
     if (query.trim().length === 1) {
       console.log("Inside === 1: " + query.trim().length )
-      setListingsToShow([]);
+      setListingsToShow(listings);
     } else if (query.trim().length > 1) {
       console.log("Inside > 1: " + query.trim().length )
       let newListings = listings.filter((listing) =>
