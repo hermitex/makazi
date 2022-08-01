@@ -95,6 +95,7 @@ function NewListingForm() {
       let result = await postListing({ ...listingData, imgUrl: url });
       if (result.length) {
         setMessage("success");
+        window.location = 'listings';
       }
     } catch (error) {
       setMessage("danger");
