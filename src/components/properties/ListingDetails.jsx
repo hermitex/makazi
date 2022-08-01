@@ -17,13 +17,11 @@ function ListingDetails({}) {
   const location = useLocation();
   const { listing } = location.state;
   const {
-    id,
     name,
     summary,
     city,
     county,
     category,
-    type,
     description,
     imgUrl,
     bedrooms,
@@ -39,10 +37,10 @@ function ListingDetails({}) {
       <Col md={9}>
         <Card className="p-5">
           <Row>
-            <Col md={12}>
+            <Col md={12} className="mb-1">
               <Link to="/listings">
                 <Button>
-                  <i class="fa-solid fa-chevron-left"></i> Back
+                  <i className="fa-solid fa-chevron-left"></i> Back
                 </Button>
               </Link>
             </Col>
@@ -56,14 +54,13 @@ function ListingDetails({}) {
                 <CardTitle className="h2 text-muted">{name}</CardTitle>
                 <CardBody>
                   <CardText>{description}</CardText>
-                  <div className="container-fluid">
+                  <div className="">
                     <Row className="my-5 ">
                       <Col md={4} className="">
                         <Card className="bg-dark py-3 px-1">
                           <CardBody>
                             <CardText className="text-muted h5">
-                              {" "}
-                              Offering at{" "}
+                              Offering at
                             </CardText>
                             <CardTitle className="h4 text-light">
                               {price}
@@ -78,7 +75,6 @@ function ListingDetails({}) {
                               Location
                             </CardText>
                             <CardTitle className="h4 text-light">
-                              {" "}
                               {city}
                             </CardTitle>
                           </CardBody>
@@ -112,7 +108,7 @@ function ListingDetails({}) {
                       }}
                     >
                       <i className="fa-solid fa-bed"></i>
-                      {listing.bedrooms}
+                      {bedrooms}
                     </ListGroupItem>
                     <ListGroupItem
                       style={{
@@ -120,14 +116,14 @@ function ListingDetails({}) {
                       }}
                     >
                       <i className="fa-solid fa-shower"></i>
-                      {listing.bathrooms}
+                      {bathrooms}
                     </ListGroupItem>
                     <ListGroupItem
                       style={{
                         width: "100%",
                       }}
                     >
-                      <var>{listing.size}</var>
+                      <var>{size}</var>
                       <sup>2</sup> ft
                     </ListGroupItem>
                   </ListGroup>
