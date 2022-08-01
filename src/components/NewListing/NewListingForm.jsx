@@ -258,11 +258,11 @@ function NewListingForm() {
             type="file"
           />
           <FormText>Add multiple images for your listing.</FormText>
-          <img
+          {/* <img
             src={urlData}
             style={{ width: "300px", height: "250px" }}
             alt=""
-          />
+          /> */}
         </Col>
       </FormGroup>
       <Button>Add Listing</Button>
