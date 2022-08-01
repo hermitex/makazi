@@ -77,7 +77,7 @@ function NewListingForm() {
   }
 
   return (
-    <Form className="mb-5" onSubmit={handleSubmit}>
+    <Form className="mb-5" onSubmit={handleSubmit} style={{width: '100vw'}}>
       <Row>
         <Col md={6}>
           <FormGroup>
