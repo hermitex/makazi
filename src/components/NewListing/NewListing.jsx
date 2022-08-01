@@ -69,11 +69,13 @@ function NewListingForm() {
   }
 
   function postListing(data) {
+    console.log(data);
     try {
       axios
         .post(`https://makazi-api.herokuapp.com/api/v1/listings`, data)
-        .then(() => {
-          window.location = "listings";
+        .then((data) => {
+          // window.location = "listings";
+          console.log("Posted listing: " + data );
         });
     } catch (error) {
       console.error(error);
