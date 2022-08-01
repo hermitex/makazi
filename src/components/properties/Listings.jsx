@@ -11,6 +11,7 @@ function Listings() {
     "https://makazi-api.herokuapp.com/api/v1/listings"
   );
   const [listingsToShow, setListingsToShow] = useState(null);
+  const [criteria, setCriteria] = useState("");
   async function onDelete(id) {
     try {
       await axios.delete(
@@ -37,9 +38,8 @@ function Listings() {
     }
   }
 
-  const onSort = useMemo( 
-    (criteria) => {
-      let newListings;
+  const sortedListings =useMemo(() =>   function sortBy(){
+    let newListings;
       if (criteria.toLowerCase() === "price") {
         newListings = [...listings].sort((a, b) => a.price - b.price);
         setListingsToShow(newListings);
@@ -52,10 +52,12 @@ function Listings() {
         );
         setListingsToShow(newListings);
       }
-    },
+  }, [listings, criteria])
 
-    [listings]
-  );
+function onSort(criteria){
+  setCriteria(criteria);
+  console.log(sortedListings)
+}
 
   return (
     <>
