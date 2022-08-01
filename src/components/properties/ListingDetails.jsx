@@ -45,12 +45,12 @@ function ListingDetails({}) {
               </Link>
             </Col>
             <Row>
-              <Col xs={12} sm={12} md={5}>
+              <Col xs={12} sm={12} md={4}>
                 <Card style={{ height: "auto" }}>
                   <img src={imgUrl} alt="listing" />
                 </Card>
               </Col>
-              <Col xs={12} sm={12} md={7}>                
+              <Col xs={12} sm={12} md={8}>                
                 <CardBody>
                 <CardTitle className="h2 text-muted">{name}</CardTitle>
                   <CardText>{description}</CardText>
