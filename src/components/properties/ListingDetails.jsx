@@ -48,7 +48,7 @@ function ListingDetails({}) {
             </Col>
             <Row>
               <Col md={3}>
-                <Card className="h-100">
+                <Card style={{ height: "auto" }}>
                   <img src={imgUrl} alt="listing" />
                 </Card>
               </Col>

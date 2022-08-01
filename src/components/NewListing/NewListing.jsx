@@ -94,7 +94,7 @@ function NewListingForm() {
       let url = await uploadImage(ImgData);
       let result = await postListing({ ...listingData, imgUrl: url });
       if (Object.keys(result).length) {
-        setMessage("success");
+        setMessage("info");
         setTimeout(() => {
           window.location = "listings";
         }, 1500);
