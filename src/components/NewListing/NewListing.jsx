@@ -93,6 +93,7 @@ function NewListingForm() {
     try {
       let url = await uploadImage(ImgData);
       let result = await postListing({ ...listingData, imgUrl: url });
+      console.log(result);
       if (result.length) {
         setMessage("success");
         window.location = 'listings';
