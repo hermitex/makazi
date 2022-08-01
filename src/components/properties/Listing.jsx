@@ -22,14 +22,14 @@ function Listing({ listing, onDelete }) {
       <Col md={12}>
         <Card className="mt-3 mb-2">
           <Row>
-            <Col md={4}>
+            <Col md={5}>
               <img
                 src={listing.imgUrl}
                 style={{ width: "100%", height: "270px" }}
                 alt={listing.name}
               />
             </Col>
-            <Col md={8} className="py-2 px-4">
+            <Col md={7} className="py-2 px-4">
               <CardTitle className="text-muted">{listing.name}</CardTitle>
               <CardTitle className="h3">Ksh.{listing.price}</CardTitle>
               <CardTitle className="h4 text-muted">{listing.summary}</CardTitle>
