@@ -28,10 +28,10 @@ function Listings() {
 
   function onSearch(query) {
     if (query.trim().length === 1) {
-      console.log("Inside === 1: " + query.trim().length )
+      console.log("Inside === 1: " + query.trim().length);
       setListingsToShow(listings);
     } else if (query.trim().length > 1) {
-      console.log("Inside > 1: " + query.trim().length )
+      console.log("Inside > 1: " + query.trim().length);
       let newListings = listings.filter((listing) =>
         listing.county.toLowerCase().includes(query.toLowerCase())
       );
@@ -42,7 +42,14 @@ function Listings() {
   return (
     <>
       <Card>
-        <Search onSearch={onSearch} />
+        <Search
+          onSearch={onSearch}
+          searchResults={
+            listingsToShow
+              ? listingsToShow && listingsToShow.length
+              : listings && listings.length
+          }
+        />
       </Card>
       <Row>
         {listingsToShow ? (

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Col, Row, Button } from "reactstrap";
-function Search({onSearch}) {
+function Search({onSearch, searchResults}) {
   const [searchData, setSearchData] = useState("")
   function handleChange(event) {
     let searchValue = event.target.value;
@@ -19,7 +19,7 @@ function Search({onSearch}) {
       <Row className="d-flex">
         <Col md={6}>
           <FormGroup>
-            <Label for="search">Showing 300 results</Label>
+            <Label for="search">Showing {searchResults} results</Label>
             <Input
               id="search"
               name="select"
