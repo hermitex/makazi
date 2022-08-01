@@ -12,7 +12,9 @@ import {
 
 function Listing({ listing, onDelete }) {
   function handleDelete(listing) {
-    onDelete(listing.id);
+    if (window.confirm("Are you sure you want to delete this listing?")) {
+      onDelete(listing.id);
+    }
   }
 
   return (
