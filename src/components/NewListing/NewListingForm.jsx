@@ -60,7 +60,7 @@ function NewListingForm() {
   async function postListing(data) {
     console.log(data);
     try {
-      await axios.post("https://makazipopote-api/api/v1/listings", data);
+      await axios.post("https://makazipopote-api.herokuapp.com/api/v1/listings", data);
       window.location = '/listings';
     } catch (error) {
       console.error(error);
