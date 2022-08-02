@@ -23,14 +23,14 @@ function Listing({ listing, onDelete }) {
       <Col md={12}>
         <Card className="mt-3 mb-2">
           <Row>
-            <Col md={5}>
+            <Col md={5} className="text-center">
               <img
                 src={listing.imgUrl}
                 style={{ width: "100%", height: "270px" }}
                 alt={listing.name}
               />
               <CardImgOverlay>
-                <i className="fa-solid fa-heart"></i>
+                <i className="fa-solid fa-heart" style={{fontSize: "2rem"}}></i>
               </CardImgOverlay>
             </Col>
             <Col md={7} className="py-2 px-4">
@@ -41,7 +41,6 @@ function Listing({ listing, onDelete }) {
                 <CardTitle className="text-muted">{listing.name}</CardTitle>
                 <i
                   className="fa-solid fa-share"
-                  style={{ cursor: "pointer" }}
                 ></i>
               </div>
 
