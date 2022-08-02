@@ -22,10 +22,10 @@ nav{
 
 label{
   color: orange !important;
-  cursor: "pointer"
+  cursor: "pointer" !important;
 }
 
 img:hover{
   opacity: 0.85;
-  cursor: pointer;
+  cursor: pointer !important;;
 }
