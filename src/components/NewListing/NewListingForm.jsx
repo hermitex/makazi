@@ -28,7 +28,7 @@ function NewListingForm() {
     price: "",
   });
 
-  const [urlData, setUrlData] = useState("");
+  const [urlData, setUrlData] = useState(null);
   const [uploadImage] = useCloudinary();
 
   function getImageUrl(file) {
@@ -266,7 +266,7 @@ function NewListingForm() {
           />
           <FormText>Add multiple images for your listing.</FormText>
           <img
-            src={urlData ? urlData : "https://via.placeholder.com/300/250"}
+            src={!urlData ? urlData : "https://via.placeholder.com/300/250?text=New+Image+Goes+Here"}
             style={{ width: "300px", height: "250px" }}
             alt=""
           />
