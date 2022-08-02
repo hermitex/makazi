@@ -31,7 +31,7 @@ Makazi is a Real Estate web application that allows Agents to manage properties.
 
 ## Live Demo on
 
-[Youtube Video](https://youtu.be/pjMLm8xdYA0)
+[Youtube Video](https://youtu.be/LUx2aZwh64I)
 
 ## Table of Content
 
