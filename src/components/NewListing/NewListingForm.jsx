@@ -10,6 +10,8 @@ import {
   Col,
   Button,
 } from "reactstrap";
+import useCloudinary from "../hooks/useCloudinary";
+
 
 function NewListingForm() {
   const [listingData, setlistingData] = useState({
@@ -28,6 +30,7 @@ function NewListingForm() {
   });
 
   const [urlData, setUrlData] = useState("");
+  const [uploadImage] = useCloudinary()
 
   function getImageUrl(file) {
     const reader = new FileReader();
@@ -47,8 +50,8 @@ function NewListingForm() {
     }
 
     if (event.target.type === "file") {
-      const file = event.target.files[0];
-      getImageUrl(file);
+       value = event.target.files[0];
+      getImageUrl(value);
     }
 
     setlistingData({ ...listingData, [key]: value });
@@ -57,7 +60,7 @@ function NewListingForm() {
   async function postListing(data) {
     console.log(data);
     try {
-      await axios.post("http://localhost:8002/properties", data);
+      await axios.post("https://makazipopote-api/api/v1/listings", data);
       window.location = '/listings';
     } catch (error) {
       console.error(error);
@@ -66,11 +69,13 @@ function NewListingForm() {
 
   async function handleSubmit(event) {
     event.preventDefault();
+    let formData = new FormData();
+    formData.append('file', listingData.img_url)
+    formData.append('upload_preset', 'makazi');
+    formData.append('cloud_name', 'hng-pre-internship')
     try {
-      let result = await axios.post("http://localhost:8001/api/v1/upload", {
-        urlData,
-      });
-      postListing({ ...listingData, img_url: result.data.secure_url });
+      let url = await uploadImage(formData);
+      postListing({ ...listingData, img_url: url });
     } catch (error) {
       console.log(error.message);
     }
