@@ -73,7 +73,7 @@ function NewListingForm() {
   async function postListing(data) {
     try {
       let response = await axios.post(
-        `https://makazi-api.herokuapp.com/api/v1/listings`,
+        `https://makazipopote-api.herokuapp.com/api/v1/listings`,
         data
       );
       let listing = await response.data;
