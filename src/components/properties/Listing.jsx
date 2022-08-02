@@ -25,7 +25,7 @@ function Listing({ listing, onDelete }) {
           <Row>
             <Col
               md={5}
-              className="text-center d-flex justify-content-center align-content-center"
+              className="text-center d-flex justify-content-center align-content-center align-items-center"
               style={{  height: "270px" }}
             >
               <img
@@ -33,12 +33,12 @@ function Listing({ listing, onDelete }) {
                 style={{ width: "100%", height: "100%" }}
                 alt={listing.name}
               />
-              {/* <CardImgOverlay style={{ width: "100%", height: "100%" }}> */}
+              <CardImgOverlay >
                 <i
                   className="fa-solid fa-heart"
                   style={{ fontSize: "1.7rem" }}
                 ></i>
-              {/* </CardImgOverlay> */}
+              </CardImgOverlay>
             </Col>
             <Col md={7} className="py-2 px-4">
               <div
