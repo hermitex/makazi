@@ -26,7 +26,7 @@ function Listing({ listing, onDelete }) {
             <Col
               md={5}
               className="text-center d-flex justify-content-center align-content-center"
-              style={{ width: "100%", height: "270px" }}
+              style={{  height: "270px" }}
             >
               <img
                 src={listing.imgUrl}
