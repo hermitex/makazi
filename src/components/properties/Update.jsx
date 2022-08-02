@@ -106,7 +106,7 @@ function NewListingForm({
     console.log(data);
     try {
       await axios.patch(
-        `https://makazi-api.herokuapp.com/api/v1/listings/${id}`,
+        `https://makazipopote-api.herokuapp.com/api/v1/listings/${id}`,
         data
       );
       window.location = "/listings";

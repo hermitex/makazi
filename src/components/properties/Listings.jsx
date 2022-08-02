@@ -8,14 +8,14 @@ import Listing from "./Listing";
 
 function Listings() {
   const [listings] = useFetch(
-    "https://makazi-api.herokuapp.com/api/v1/listings"
+    "https://makazipopote-api.herokuapp.com/api/v1/listings"
   );
   const [listingsToShow, setListingsToShow] = useState(null);
   const [criteria, setCriteria] = useState("price");
   async function onDelete(id) {
     try {
       await axios.delete(
-        `https://makazi-api.herokuapp.com/api/v1/listings/${id}`,
+        `https://makazipopote-api.herokuapp.com/api/v1/listings/${id}`,
         {
           headers: { "Content-Type": "application/json" },
         }
