@@ -30,7 +30,11 @@ function Listing({ listing, onDelete }) {
               />
             </Col>
             <Col md={7} className="py-2 px-4">
+              <div className="list-unstyled d-flex justify-content-between" style={{width: "100%"}}>
               <CardTitle className="text-muted">{listing.name}</CardTitle>
+              <i className="fa-solid fa-share"></i>
+              </div>
+              
               <CardTitle className="h3">Ksh.{listing.price}</CardTitle>
               <CardTitle className="h4 text-muted">{listing.summary}</CardTitle>
 
