@@ -23,17 +23,13 @@ function Listing({ listing, onDelete }) {
       <Col md={12}>
         <Card className="mt-3 mb-2">
           <Row>
-            <Col
-              md={5}
-              className="text-center"
-              style={{  height: "270px" }}
-            >
+            <Col md={5}>
               <img
                 src={listing.imgUrl}
-                style={{ width: "100%", height: "100%" }}
+                style={{ width: "100%", height: "270px" }}
                 alt={listing.name}
               />
-              <CardImgOverlay >
+              <CardImgOverlay style={{ width: "100%", height: "270px" }}>
                 <i
                   className="fa-solid fa-heart"
                   style={{ fontSize: "1.7rem" }}
