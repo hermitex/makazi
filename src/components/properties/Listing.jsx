@@ -8,6 +8,7 @@ import {
   ListGroupItem,
   ListGroup,
   Button,
+  CardImgOverlay,
 } from "reactstrap";
 
 function Listing({ listing, onDelete }) {
@@ -28,6 +29,9 @@ function Listing({ listing, onDelete }) {
                 style={{ width: "100%", height: "270px" }}
                 alt={listing.name}
               />
+              <CardImgOverlay>
+                <i className="fa-solid fa-heart"></i>
+              </CardImgOverlay>
             </Col>
             <Col md={7} className="py-2 px-4">
               <div
@@ -89,7 +93,8 @@ function Listing({ listing, onDelete }) {
                     width: "100%",
                   }}
                 >
-                 <i className="fa-solid fa-ruler-combined"></i> <var>{listing.size}</var>
+                  <i className="fa-solid fa-ruler-combined"></i>{" "}
+                  <var>{listing.size}</var>
                   <sup>2</sup> ft
                 </ListGroupItem>
               </ListGroup>
