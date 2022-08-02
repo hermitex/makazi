@@ -10,6 +10,7 @@
 i{
   color: orange;
   margin-right: 0.2rem;
+  cursor: "pointer" !important;
 }
 
 button{
@@ -22,10 +23,10 @@ nav{
 
 label{
   color: orange !important;
-  cursor: "pointer" !important;
+ 
 }
 
 img:hover{
-  opacity: 0.85;
-  cursor: pointer !important;;
+  opacity: 0.85 !important;
+  cursor: pointer !important;
 }
