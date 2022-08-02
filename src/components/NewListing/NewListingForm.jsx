@@ -12,7 +12,6 @@ import {
 } from "reactstrap";
 import useCloudinary from "../hooks/useCloudinary";
 
-
 function NewListingForm() {
   const [listingData, setlistingData] = useState({
     name: "",
@@ -30,7 +29,7 @@ function NewListingForm() {
   });
 
   const [urlData, setUrlData] = useState("");
-  const [uploadImage] = useCloudinary()
+  const [uploadImage] = useCloudinary();
 
   function getImageUrl(file) {
     const reader = new FileReader();
@@ -50,7 +49,7 @@ function NewListingForm() {
     }
 
     if (event.target.type === "file") {
-       value = event.target.files[0];
+      value = event.target.files[0];
       getImageUrl(value);
     }
 
@@ -60,8 +59,11 @@ function NewListingForm() {
   async function postListing(data) {
     console.log(data);
     try {
-      await axios.post("https://makazipopote-api.herokuapp.com/api/v1/listings", data);
-      window.location = '/listings';
+      await axios.post(
+        "https://makazipopote-api.herokuapp.com/api/v1/listings",
+        data
+      );
+      window.location = "/listings";
     } catch (error) {
       console.error(error);
     }
@@ -70,9 +72,9 @@ function NewListingForm() {
   async function handleSubmit(event) {
     event.preventDefault();
     let formData = new FormData();
-    formData.append('file', listingData.img_url)
-    formData.append('upload_preset', 'makazi');
-    formData.append('cloud_name', 'hng-pre-internship')
+    formData.append("file", listingData.img_url);
+    formData.append("upload_preset", "makazi");
+    formData.append("cloud_name", "hng-pre-internship");
     try {
       let url = await uploadImage(formData);
       postListing({ ...listingData, img_url: url });
@@ -82,7 +84,7 @@ function NewListingForm() {
   }
 
   return (
-    <Form className="mb-5" onSubmit={handleSubmit} style={{width: '100vw'}}>
+    <Form className="mb-5" onSubmit={handleSubmit} style={{ width: "100vw" }}>
       <Row>
         <Col md={6}>
           <FormGroup>
@@ -264,7 +266,7 @@ function NewListingForm() {
           />
           <FormText>Add multiple images for your listing.</FormText>
           <img
-            src={urlData}
+            src={urlData ? urlData : "https://via.placeholder.com/300/250"}
             style={{ width: "300px", height: "250px" }}
             alt=""
           />
