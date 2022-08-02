@@ -25,7 +25,7 @@ function Listing({ listing, onDelete }) {
           <Row>
             <Col
               md={5}
-              className="text-center d-flex justify-content-center align-content-center align-items-center"
+              className="text-center"
               style={{  height: "270px" }}
             >
               <img
