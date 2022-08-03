@@ -97,7 +97,7 @@ As User you should be able to:
 - The server should run on `http://localhost:3000` by default
 - If the port is busy, kindly feel free to change the port inside the server.js file
 - Once the server is up and running, visit the link  `http://localhost:3000` to access the application
-- You can also check out the app's API at [Makazi API](https://github.com/hermitex/makazi-properties-api)
+- You can also check out the app's API at [Makazi API](https://github.com/hermitex/makazipopote-api)
   
  ****
 [Go Back to the top](#Makazi)
@@ -123,7 +123,7 @@ As User you should be able to:
 
 ## Known Bugs
 
-- Sometimes the time for the weather forecast could be wrong
+- N/A
 
 ****
 
